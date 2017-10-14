@@ -1,0 +1,26 @@
+application: tokensale-182912
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+
+- url: /favicon.ico
+  static_files: assets/logos/favicon.ico
+  upload: assets/logos/favicon.ico
+  secure: always
+  
+- url: /assets
+  secure: always
+  static_dir: assets
+
+- url: .*
+  secure: always
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: markupsafe
+  version: "0.15"
