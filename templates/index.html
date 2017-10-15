@@ -18,7 +18,6 @@
 <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="/assets/js/bootstrap.js"></script>
-<script src="/assets/js/npm.js"></script>
 <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
 <!--Jquery Countdown-->
@@ -46,10 +45,8 @@ $(document).ready(function(){
 <!--Email Form-->
 
 <script language="Javascript" type="text/javascript">
-<!--
 /* wording of your error and thank you messages */
-var error_1="Please enter your Name & valid email address";
-var error_2="Please enter your name";
+var error_1="Please enter a valid email address";
 var thankyou="Thank you. We'll keep you interested.";
 function trim(str){str = str.replace(/^\s*$/, '');return str;}
 function $Npro(field){var element =  document.getElementById(field);return element;return false;}
@@ -68,7 +65,7 @@ function emptyvalidation(value, errorMessage) {
 
 function signup(thisform) {
 	var $thisform = $(thisform),
-		$email = $("#email");
+		$email = $thisform.find('input[name="EMAIL"]');
 	with ($thisform) {
 		if (emailvalidation($email,error_1)==false) {$email.focus(); return false;};
 	}
@@ -84,17 +81,15 @@ function signup(thisform) {
 		contentType: "application/json; charset=utf-8",
 			
 		success: function(data){
-			console.log(data);	
-			if (data['result'] === "error") {
-				$("#loading").hide();
-				$("#myResponse").html(data['msg']); //Writes the error message that comes from optIn.php and styles it.
-				$('#myResponse').css({display:'inline',color:'red'})
+			$("#loading").hide();
+			if (data['result'] === "success") {
+				$('#myResponse').css({display:'inline',color:'green'})
+				$email.val('');
+				$("#myResponse").html('Thank You!');
 			}
 			else {
-				$("#loading").hide();
-				$("#myResponse").html(thankyou); //Writes the "Thank you" message that comes from optIn.php and styles it.
-				$('#myResponse').css({display:'inline',color:'green'})
-				$email.empty();
+				$('#myResponse').css({display:'inline',color:'red'})
+				$("#myResponse").html(data['msg']);
 			}
 		},
 		error: function(xhr, status, errorThrown) {
@@ -219,7 +214,6 @@ var scrollToElement = function(el, ms){
 });
 	</script>
 	
-	  <link href="/assets/css/sandbox.css" rel="stylesheet">
   <link href="/assets/css/animsition.css" rel="stylesheet">
   <style media="screen">
     .bg-init,
@@ -242,7 +236,7 @@ var scrollToElement = function(el, ms){
 		
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
 			
-		<a href="index.html"><img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive"></a>
+		<a href="/"><img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive"></a>
 			
 			
 		</div>
@@ -329,20 +323,22 @@ var scrollToElement = function(el, ms){
     						<form onsubmit="return signup(this);return false;" name="subform" id="subform" action="//lendroid.us15.list-manage.com/subscribe/post-json?u=be18303ae178fe4d4a49fa791&id=ea7e4faa19" method="get">
 								<div style="margin-top:20px">
 									<div class="form-row">
-    									<div class="col-lg-12">
-											<input type="text"  id="email" name="email" value="" class="form-control"  placeholder="Your Email">
+    									<div class="col-lg-7">
+											<input id="email" value="" class="form-control"
+												type="email" name="EMAIL" data-type="req" placeholder="Please Enter Your Email"
+												style="width:56%;float:right;height:40px;">
 										</div>
-										<div class="col-lg-12">
-											<input type="submit" id="submit" name="submit" value="SUBSCRIBE" class="blue_button">
+										<div class="col-lg-5">
+											<input type="submit" id="submit" name="submit" value="SUBSCRIBE" class="blue_button"
+												style="width:36%;float:left;">
 										</div>
 									</div>
 									<br><br>
-									<div style="width:100%"><span id="Error" style="color:red;display:none;font-size: 16px;"></span></div>
-        							<div id="myResponse" style="DISPLAY:none;font-size: 19px;font-weight: 500;"></div>
-									<div id="loading" style="display:none;"><img src="wait.gif" alt=""></div>
+									<div style="clear:both;width:100%;"><span id="Error" style="color:red;display:none;font-size: 16px;"></span></div>
+        							<div id="myResponse" style="width:100%;display:none;font-size: 19px;font-weight: 500;"></div>
+									<div id="loading" style="display:none;"><img src="/assets/images/wait.gif" alt=""></div>
 								</div>
 							</form>
-							<small class="promise"><em>We won't spam you</em></small>
 						</div>
 					</div>
 
@@ -950,25 +946,6 @@ var scrollToElement = function(el, ms){
 <script src="/assets/js/particles.js"></script>
 <script src="/assets/js/app.js"></script>
 
-<script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-</script>
 <!-- Particle JS -->
 </body>
 </html>

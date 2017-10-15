@@ -16,88 +16,16 @@
 <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
 <link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="/assets/js/bootstrap.js"></script>
-<script src="/assets/js/npm.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
 <!--Jquery Countdown-->
 
 <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="/assets/js/jquery.downCount.js"></script> 
-<script type="text/javascript">
-$(document).ready(function() { 
-	$('.countdown').downCount({
-		date: '11/25/2017 12:00:00',
-  offset: +1
-	});
-});
-</script> 
-
-<script>
-$(document).ready(function(){
-    $(".blue_button").click(function(){
-        $(".email_formy").fadeToggle();
-    });
-});
-</script>
-
-
-<script language="Javascript" type="text/javascript">
-<!--
-/* wording of your error and thank you messages */
-var error_1="Please enter your Name & valid email address";
-var error_2="Please enter your name";
-var thankyou="Thank you. We'll keep you interested.";
-function trim(str){str = str.replace(/^\s*$/, '');return str;}
-function $Npro(field){var element =  document.getElementById(field);return element;return false;}
-function emailvalidation(field, errorMessage) {
-	var goodEmail = field.value.match(/[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/); 
-	apos=field.value.indexOf("@");dotpos=field.value.lastIndexOf(".");lastpos=field.value.length-1;tldLen = lastpos-dotpos;dmLen=dotpos-apos-1;var badEmail= (tldLen<2 || dmLen<2 || apos<1);
-	if (!goodEmail || badEmail) {$Npro("Error").innerHTML=errorMessage;$Npro("Error").style.display="inline";field.focus();field.select();return false;}
-	else {return true;}
-}
-function emptyvalidation(entered, errorMessage) {
-	$Npro("Error").innerHTML="";
-	with (entered) {
-	if (trim(value)==null || trim(value)=="") {/*alert(errorMessage);*/$Npro("Error").innerHTML=errorMessage;$Npro("Error").style.display="inline";return false;}
-	else {return true;}}//with
-}//emptyvalidation
-
-function signup(thisform) {
-	with (thisform) {
-		if (emailvalidation(email,error_1)==false) {email.focus(); return false;};
-		if (emptyvalidation(name,error_2)==false) {name.focus(); return false;};
-	}
-	$("#submit, #myResponse").hide();	// Hide the buttom and the message
-	$("#loading").show();				// show the loading image.
-	params=$("#subform").serialize();
-	$.post("optIn.php", params, function(response ){
-		//alert(response); //may need to activate this line for debugging.
-    	$("#loading").hide();
-		$("#myResponse").html(thankyou); //Writes the "Thank you" message that comes from optIn.php and styles it.
-		$('#myResponse').css({display:'inline',color:'green'})
-		$("#submit").show();
-		$(".form-row").fadeToggle();
-		}
-	)
-return false;
-}
-//-->
-</script>
-
-  
-
-<!--Email Form-->
-
-
-	
-		
-
-	<style>
+<style>
 @import url(http://fonts.googleapis.com/css?family=Raleway);
-
-
 .faq-header {
   font-size: 2em;
   border-bottom: 1px dotted #ccc;
@@ -185,7 +113,7 @@ return false;
 		
 		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
 			
-			<a href="index.html"><img src="/assets/images/logo.svg" width="190" height="86" class="img-responsive"></a>
+			<a href="/"><img src="/assets/images/logo.svg" width="190" height="86" class="img-responsive"></a>
 			
 			
 		</div>
