@@ -3,16 +3,16 @@ body{font-family: 'Dosis', sans-serif;}
 .menu {margin-top: 64px;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;float: right;}
 .menu ul li {float:left;margin-right:20px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;}
-.connect_icons {margin-top: 7px;margin-left: 43%;}
+.connect_icons {margin-top: 7px;}
 .connect_icons ul {margin:0px; padding:0px; list-style-type: none;}
-.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons ul li {display:inline-block;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
 .logo {margin-top: 29px;}
 
 .main_heading {    margin-top: 110px;}
 .main_heading h2 {font-size:56px;color:#2e368f;letter-spacing: 20;text-align: center;font-weight: 300;}
 .main_heading p {font-size:20px;color: #1f1f1f;letter-spacing: 20;text-align: center;font-weight: 500;}
 .main_button {text-align: center;}
-.blue_button {background:#2e368f;padding: 7px 20px 7px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;}
+
 
 .token_launch_heading h3 {color:#2e368f;font-size:25px;font-weight: 500;text-align: center;}
 .token_launch_heading {margin-top: 50px;}
@@ -260,3 +260,6 @@ div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; hei
 
 .email p {font-weight:500; color:#1f1f1f;}
 .footer_logo p {font-weight: 600;color:#1f1f1f;}
+
+.form-control_custom {width:50%;}
+.blue_button {background:#2e368f;padding: 5px 20px 5px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;margin-left: -88px;}

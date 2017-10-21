@@ -9,11 +9,20 @@ app.config['DEBUG'] = True
 
 @app.route('/')
 def landing():
+    """ Render the landing page continaing details about the Token Launch."""
     return render_template('index.html')
 
 @app.route('/faq')
 def faq():
+    """ Render the 'Frequently Asked Questions' page that provides more details abou the protocol 
+        and the Token Sale.
+    """
     return render_template('faq.html')
+
+@app.route('/lendroid-support-token')
+def lendroid_support_token():
+    """ Render the Lendroid Support Token page."""
+    return render_template('lendroid-support-token.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
