@@ -263,3 +263,23 @@ div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; hei
 
 .form-control_custom {width:50%;}
 .blue_button {background:#2e368f;padding: 5px 20px 5px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;margin-left: -88px;}
+
+.ally_heading h3{font-size:45px;color: #2a3b94;letter-spacing:1px;text-align:center;font-weight:400;}
+img.Ox {
+    margin-top: -2.5%;
+}
+img.radar {
+    margin-top: 6.5%;
+}
+
+@media only screen and (max-width: 768px) {
+    div.ally img {
+        margin-top: 0;
+    }
+    img.Ox {
+        margin-left: -9%;
+    }
+    img.ocean {
+        margin-left: -1%;
+    }
+}
