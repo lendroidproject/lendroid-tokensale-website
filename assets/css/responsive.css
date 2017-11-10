@@ -7,7 +7,7 @@
 }
 /*---------------------------------------------------------------------------------------------------------*/
 @media (max-width: 1200px) {
-    .connect_icons {margin-top:10px;}
+    .connect_icons {margin-top:10px; margin-left:5%;}
 }
 /*---------------------------------------------------------------------------------------------------------*/
 
@@ -15,10 +15,10 @@
 @media screen and (max-width: 1024px) { 
 .menu {margin-top:44px;}
 .menu ul {margin:0px; padding:0px; list-style-type: none;}
-.menu ul li {float:left;margin-right: 10px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;}
-.connect_icons {margin-top:9px;}
+.menu ul li {float:left;margin-right: 11px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons {margin-top: 9px;margin-left: 41%;}
 .connect_icons ul {margin:0px; padding:0px; list-style-type: none;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
 .logo {    margin-top: 11px;}
 
 .main_heading {    margin-top: 110px;}
@@ -30,12 +30,12 @@
 .token_launch_heading h3 {color:#2e368f;font-size:25px;font-weight: 500;text-align: center;}
 .token_launch_heading {margin-top:80px;}
 
-.main-container2 {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 12px;}
+.main-container2  {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 12px;}
 .offer_text h3{color:#2e368f;font-size: 40px;font-weight: 400;text-align: center;}
-.offer_text p{color: #1f1f1f;font-size: 20px;font-weight: 400;text-align: center;}
+.offer_text p{color: #1f1f1f;font-size: 19px;font-weight: 400;text-align: center;}
 .square_box {border:1px #30368a solid;width: 10%;text-align: center;font-size: 20px;}
 .offer_text_points h4 {font-size: 19px;color:#30368a;font-weight: 600;letter-spacing: 1px;}
-.offer_text_points p {font-size: 14px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
+.offer_text_points p {font-size: 13px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
 .offer_text_points {margin-top: 50px;}
 .main-container3 {background:url(../images/blue_bg.jpg) no-repeat; background-size:cover; width:100%;}
 .diagram_heading h3 {font-size: 40px;color:#fff;letter-spacing: 1px;text-align: center;font-weight: 400;}
@@ -123,15 +123,15 @@
     margin-bottom: 19px;
     }
 
-.menu {margin-top: 54px;}
-.menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: -28%;;}
+.menu {margin-top: 54px;/* text-align: center; */margin-left: -14%;}
+.menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 25%;}
 .menu ul li {float:left;margin-right: 16px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
-.connect_icons {margin-top: 5px;text-align: center;}
-.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
-.logo {margin-top: 11px;/* margin: 0 auto; */text-align: center;}
+.connect_icons {margin-top: 35px;text-align: center;margin-left: -3%;}
+.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 43%;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+.logo {margin-top: 11px;/* margin: 0 auto; */text-align: center;margin-bottom: 20px;}
 
-.main_heading {margin-top: 60px;}
+.main_heading {margin-top: 10px;}
 .main_heading h2 {font-size: 45px;color:#2e368f;letter-spacing: 1px;text-align: center;font-weight: 400;}
 .main_heading p {font-size: 17px;color: #1f1f1f;letter-spacing: 20;text-align: center;font-weight: 400;}
 .main_button {text-align: center;}
@@ -140,7 +140,7 @@
 .token_launch_heading h3 {color:#2e368f;font-size: 23px;font-weight: 500;text-align: center;}
 .token_launch_heading {margin-top:80px;}
 
-.main-container2 {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 20px;}
+.main-container2  {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 20px;}
 .offer_text h3{color:#2e368f;font-size: 35px;font-weight: 400;text-align: center;}
 .offer_text p{color:#58595b;font-size: 18px;font-weight: 500;text-align: center;}
 .square_box {border:1px #30368a solid;width: 10%;text-align: center;font-size: 20px;}
@@ -170,7 +170,7 @@
     width: 60%;
 }
 	button.btn {
-    width: 30%;
+    width: 100%;
     height: 39px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -181,13 +181,13 @@
 }
 /*---------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 690px) {
-.menu {margin-top: 24px;}
+.menu {margin-top: 24px;/* text-align: center; */margin-left: 6%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: -26%;}
 .menu ul li {float:left;margin-right:20px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
 	
-	.connect_icons {margin-top: 5px;text-align: center;}
-.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+	.connect_icons {margin-top: 5px;text-align: center;margin-left: 23%;}
+.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 13%;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
 }
 
 
@@ -204,6 +204,7 @@
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
+    margin-left: 28%;
 }
 	
 	.main_heading h2 {
@@ -226,6 +227,7 @@
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
+    margin-left: 26%;
 }
 	
 	.main_heading h2 {
@@ -251,6 +253,7 @@
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
+    margin-left: 23%;
 }
 	
 	.main_heading h2 {
@@ -330,9 +333,9 @@ ul.countdown li p {
 .menu {margin-top: 24px;/* text-align: center; */margin-left: -7%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 0%;}
 .menu ul li {float:left;margin-right:20px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
-.connect_icons {margin-top: 21px;text-align: center;}
-.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons {margin-top: 21px;text-align: center;margin-left: 7%;}
+.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 36%;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
 .logo {margin-top: 23px;/* margin: 0 auto; */text-align: center;}
 .row {
     margin-right: 15px;
@@ -340,19 +343,19 @@ ul.countdown li p {
 }
 .main_heading {margin-top: 50px;}
 .main_heading h2 {font-size: 44px;color:#2e368f;letter-spacing: 20;text-align: center;font-weight: 400;}
-.main_heading p {font-size: 17px;color:#58595b;letter-spacing: 20;text-align: center;font-weight: 400;}
+.main_heading p {font-size: 18px;color:#58595b;letter-spacing: 20;text-align: center;font-weight: 400;}
 .main_button {text-align: center;}
 .blue_button {background:#2e368f;padding: 7px 20px 7px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;width: 100%;margin-left: 0;}
 
 .token_launch_heading h3 {color:#2e368f;font-size: 23px;font-weight: 400;text-align: center;}
 .token_launch_heading {margin-top:80px;}
 
-.main-container2 {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 15px;}
+.main-container2  {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 15px;}
 .offer_text h3{color:#2e368f;font-size: 31px;font-weight: 400;text-align: center;}
-.offer_text p{color: #1f1f1f;font-size: 20px;font-weight: 500;text-align: center;}
+.offer_text p{color: #1f1f1f;font-size: 21px;font-weight: 500;text-align: center;}
 .square_box {border:1px #30368a solid;width: 10%;text-align: center;font-size: 20px;}
 .offer_text_points h4 {font-size: 18px;color:#30368a;font-weight: 600;letter-spacing: 1px;}
-.offer_text_points p {font-size: 14px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
+.offer_text_points p {font-size: 13px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
 .offer_text_points {margin-top: 50px;}
 .main-container3 {background:url(../images/blue_bg.jpg) no-repeat; background-size:cover; width:100%;}
 .diagram_heading h3 {font-size: 31px;color:#fff;letter-spacing: 1px;text-align: center;font-weight: 400;}
@@ -486,9 +489,9 @@ ul.countdown li p {
 .menu {margin-top: 24px;/* text-align: center; */margin-left: -3%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 0%;}
 .menu ul li {float:left;margin-right: 20px;color:#58595b;font-size: 15px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
-.connect_icons {margin-top: 25px;text-align: center;}
-.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons {margin-top: 25px;text-align: center;margin-left: 5%;}
+.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 36%;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
 .logo {margin-top: 23px;/* margin: 0 auto; */text-align: center;}
 .row {
     margin-right: 5px;
@@ -503,7 +506,7 @@ ul.countdown li p {
 .token_launch_heading h3 {color:#2e368f;font-size: 24px;font-weight: 400;text-align: center;}
 .token_launch_heading {margin-top: 20px;}
 
-.main-container2 {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 15px;}
+.main-container2  {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 15px;}
 .offer_text h3{color:#2e368f;font-size: 30px;font-weight: 400;text-align: center;}
 .offer_text p{color: #1f1f1f;font-size: 18px;font-weight: 500;text-align: center;}
 .square_box {border:1px #30368a solid;width: 10%;text-align: center;font-size: 20px;}
@@ -514,7 +517,7 @@ ul.countdown li p {
 .diagram_heading h3 {font-size: 30px;color:#fff;letter-spacing: 1px;text-align: center;font-weight: 400;}
 .token_text h3 {font-size: 30px;color:#30368a;font-weight: 400;letter-spacing: 1px;text-align: center;}
 .token_text h5 {font-size: 15px;color:#2e368f;font-weight: 600;letter-spacing: 1px;line-height: 22px;text-align: center;}
-.token_text p {font-size: 14px;color: #1f1f1f;letter-spacing: 1px;line-height: 26px;font-weight: 500;}
+.token_text p {font-size: 13px;color: #1f1f1f;letter-spacing: 1px;line-height: 26px;font-weight: 500;}
 
 .main-container4 {margin-top: 40px;}
 
@@ -561,6 +564,7 @@ ul.countdown li p {
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
+    margin-left: 6%;
 }
 	
 	.main_heading h2 {
@@ -587,6 +591,7 @@ ul.countdown li p {
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
+    margin-left: 4%;
 }
 	
 	.main_heading h2 {
@@ -678,9 +683,9 @@ ul.countdown li p {
 	.menu {margin-top: 24px;/* text-align: center; */margin-left: -4%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 6%;}
 .menu ul li {float:left;margin-right: 15px;color:#58595b;font-size: 15px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
-.connect_icons {margin-top: 26px;text-align: center;}
-.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;}
-.connect_icons ul li {margin-right: 10px;color:#58595b;font-size: 13px;text-transform: uppercase;letter-spacing: 1px;}
+.connect_icons {margin-top: 26px;text-align: center;margin-left: 4%;}
+.connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 31%;}
+.connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size: 13px;text-transform: uppercase;letter-spacing: 1px;}
 .logo {margin-top: 23px;/* margin: 0 auto; */text-align: center;}
 .row {
     margin-right: 5px;
@@ -695,18 +700,18 @@ ul.countdown li p {
 .token_launch_heading h3 {color:#2e368f;font-size: 20px;font-weight: 400;text-align: center;}
 .token_launch_heading {margin-top: 10px;}
 
-.main-container2 {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 13px;}
+.main-container2  {background: url(../images/offer_bg.jpg) no-repeat;background-size: cover;width:100%;height:auto;margin-top: 0px;padding-bottom: 13px;}
 .offer_text h3{color:#2e368f;font-size: 26px;font-weight: 400;text-align: center;}
-.offer_text p{color: #1f1f1f;font-size: 16px;font-weight: 400;text-align: center;}
+.offer_text p{color: #1f1f1f;font-size: 17px;font-weight: 400;text-align: center;}
 .square_box {border:1px #30368a solid;width: 10%;text-align: center;font-size: 20px;}
 .offer_text_points h4 {font-size: 18px;color:#30368a;font-weight: 600;letter-spacing: 1px;}
-.offer_text_points p {font-size: 14px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
+.offer_text_points p {font-size: 15px;color: #1f1f1f;font-weight: 500;letter-spacing: 1px;}
 .offer_text_points {margin-top: 30px;}
 .main-container3 {background:url(../images/blue_bg.jpg) no-repeat; background-size:cover; width:100%;}
 .diagram_heading h3 {font-size: 26px;color:#fff;letter-spacing: 1px;text-align: center;font-weight: 200;}
 .token_text h3 {font-size: 26px;color:#30368a;font-weight: 400;letter-spacing: 1px;text-align: center;}
 .token_text h5 {font-size: 15px;color:#2e368f;font-weight: 600;letter-spacing: 1px;line-height: 22px;text-align: center;}
-.token_text p {font-size: 14px;color: #1f1f1f;letter-spacing: 1px;line-height: 26px;font-weight: 500;}
+.token_text p {font-size: 15px;color: #1f1f1f;letter-spacing: 1px;line-height: 26px;font-weight: 500;}
 
 .main-container4 {margin-top: 40px;}
 

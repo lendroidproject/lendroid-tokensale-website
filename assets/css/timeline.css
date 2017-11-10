@@ -38,7 +38,7 @@
   left: 0;
   bottom: 0;
   width: 50%;
-  height: 100% !important;
+  height: 99% !important;
   margin-left: 1px;
   border-right-width: 2px;
   border-right-style: solid;
@@ -511,7 +511,7 @@
 .timeline .timeline-item > .timeline-event .timeline-heading,
 .timeline .timeline-item > .timeline-event .timeline-body,
 .timeline .timeline-item > .timeline-event .timeline-footer {
-  padding: 4px 10px;
+  padding: 1px 10px;
 }
 .timeline .timeline-item > .timeline-event .timeline-heading p,
 .timeline .timeline-item > .timeline-event .timeline-body p,
@@ -525,6 +525,7 @@
   font-weight: 400;
   letter-spacing: 1px;
   color: #000;
+  font-size: 16px;
 }
 .timeline .timeline-item > .timeline-event .timeline-footer a {
   cursor: pointer;

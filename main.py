@@ -24,6 +24,12 @@ def lendroid_support_token():
     """ Render the Lendroid Support Token page."""
     return render_template('lendroid-support-token.html')
 
+@app.route('/media-kit')
+def media_kit():
+    """ Render the Media kit page."""
+    return render_template('media-kit.html')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""

@@ -266,15 +266,15 @@ fieldset[disabled] .btn-warning.active {
   background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
   background-image:      -o-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d9534f), to(#c12e2a));
-  background-image:         linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
+  background-image: linear-gradient(to bottom, #2a3d93 0%, #2a3d93 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
-  border-color: #b92c28;
+  border-color: #274198;
 }
 .btn-danger:hover,
 .btn-danger:focus {
-  background-color: #c12e2a;
+  background-color: #274198;
   background-position: 0 -15px;
 }
 .btn-danger:active,
