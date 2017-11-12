@@ -1,151 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<title>Lendroid | Decentralized Margin Trading</title>
-	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
-	<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-	<meta name="author" content="Vincent Garreau" />
-	<link rel="stylesheet" href="/assets/css/animations.css" type="text/css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" media="screen" href="/assets/css/style.css">
-	<link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/table.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="/assets/js/bootstrap.js"></script>
-	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-	<!--Jquery Countdown-->
-	<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
-	<script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.countdown').downCount({
-				date: '12/06/2017 12:00:00',
-				offset: +1
-			});
-		});
-	</script>
-	<!--Email Form-->
-	<script language="Javascript" type="text/javascript">
-		/* wording of your error and thank you messages */
-		var error_1 = "Please enter a valid email address";
-		var thankyou = "Thank you. We'll keep you interested.";
-		function trim(str) { str = str.replace(/^\s*$/, ''); return str; }
-		function $Npro(field) { var element = document.getElementById(field); return element; return false; }
-		function emailvalidation(field, errorMessage) {
-			var goodEmail = field.val().match(/[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/);
-			apos = field.val().indexOf("@"); dotpos = field.val().lastIndexOf("."); lastpos = field.val().length - 1; tldLen = lastpos - dotpos; dmLen = dotpos - apos - 1; var badEmail = (tldLen < 2 || dmLen < 2 || apos < 1);
-			if (!goodEmail || badEmail) { $Npro("Error").innerHTML = errorMessage; $Npro("Error").style.display = "inline"; field.focus(); field.select(); return false; }
-			else { return true; }
-		}
-		function emptyvalidation(value, errorMessage) {
-			$Npro("Error").innerHTML = "";
-			with (value) {
-				if (trim(value) == null || trim(value) == "") {/*alert(errorMessage);*/$Npro("Error").innerHTML = errorMessage; $Npro("Error").style.display = "inline"; return false; }
-				else { return true; }			
-}//with
-		}//emptyvalidation
-
-		function signup(thisform) {
-			var $thisform = $(thisform),
-				$email = $thisform.find('input[name="EMAIL"]');
-			with ($thisform) {
-				if (emailvalidation($email, error_1) == false) { $email.focus(); return false; };
-			}
-			$("#myResponse").hide();	// Hide the buttom and the message
-			$("#loading").show();				// show the loading image.
-			params = $thisform.serialize();
-			$.ajax({
-				url: $thisform.attr('action'),
-				type: 'GET',
-				data: params,
-				dataType: "jsonp",
-				jsonp: "c",
-				contentType: "application/json; charset=utf-8",
-
-				success: function (data) {
-					$("#loading").hide();
-					if (data['result'] === "success") {
-						$('#myResponse').css({ display: 'inline', color: 'green' })
-						$email.val('');
-						$("#myResponse").html('Thank You!');
-					}
-					else {
-						$('#myResponse').css({ display: 'inline', color: 'red' })
-						$("#myResponse").html(data['msg']);
-					}
-				},
-				error: function (xhr, status, errorThrown) {
-					$("#loading").hide();
-					$("#myResponse").html(status); //Writes the "Thank you" message that comes from optIn.php and styles it.
-					$('#myResponse').css({ display: 'inline', color: 'red' })
-				}
-			});
-			return false;
-		};
-	</script>
-	<!--Email Form-->
-	<script src="https://use.fontawesome.com/cdbff681b2.js"></script>
-	<!--PRELOADER-->
-	<script>
-			jQuery(document).ready(function ($) {
-				// site preloader -- also uncomment the div in the header and the css style for #preloader
-				$(window).load(function () {
-					$('#preloader').fadeOut('slow', function () { $(this).remove(); });
-				});
-			});
-	</script>
-	<!--PRELOADER-->
-	<!--Scroll to element-->
-	<script>
-			$('.click').click(function (e) {
-				// prevent default action
-				e.preventDefault();
-				// get id of target div (placed in href attribute of anchor element)
-				// and pass it to the scrollToElement function
-				// also, use 2000 as an argument for the scroll speed (2 seconds, 2000 milliseconds)
-				scrollToElement($(this).attr('href'), 2000);
-			});
-			var scrollToElement = function (el, ms) {
-				var speed = (ms) ? ms : 600;
-				$('html,body').animate({
-					scrollTop: $(el).offset().top
-				}, speed);
-			}
-	</script>
-	<!--Scroll to element-->
-	<!--Scroll to top-->
-	<script>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108365153-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-108365153-1');
+		</script>
+		<meta charset="utf-8">
+		<title>Lendroid | Decentralized Margin Trading</title>
+		<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+		<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+		<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+		<meta name="author" content="Vincent Garreau" />
+		<link rel="stylesheet" href="/assets/css/animations.css" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" media="screen" href="/assets/css/style.css">
+		<link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/table.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="/assets/js/bootstrap.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+		<!--Jquery Countdown-->
+		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
+		<script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
+		<script type="text/javascript">
 			$(document).ready(function () {
-				//Check to see if the window is top if not then display button
-				$(window).scroll(function () {
-					if ($(this).scrollTop() > 100) {
-						$('.scrollToTop').fadeIn();
-					} else {
-						$('.scrollToTop').fadeOut();
-					}
-				});
-				//Click event to scroll to top
-				$('.scrollToTop').click(function () {
-					$('html, body').animate({ scrollTop: 0 }, 800);
-					return false;
+				$('.countdown').downCount({
+					date: '12/06/2017 12:00:00',
+					offset: +1
 				});
 			});
-	</script>
-	<!--Scroll to top-->
-	<script type="text/javascript">//<![CDATA[
-			$(window).load(function () {
+		</script>
+		<!--Email Form-->
+		<script language="Javascript" type="text/javascript">
+			/* wording of your error and thank you messages */
+			var error_1 = "Please enter a valid email address";
+			var thankyou = "Thank you. We'll keep you interested.";
+			function trim(str) { str = str.replace(/^\s*$/, ''); return str; }
+			function $Npro(field) { var element = document.getElementById(field); return element; return false; }
+			function emailvalidation(field, errorMessage) {
+				var goodEmail = field.val().match(/[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/);
+				apos = field.val().indexOf("@"); dotpos = field.val().lastIndexOf("."); lastpos = field.val().length - 1; tldLen = lastpos - dotpos; dmLen = dotpos - apos - 1; var badEmail = (tldLen < 2 || dmLen < 2 || apos < 1);
+				if (!goodEmail || badEmail) { $Npro("Error").innerHTML = errorMessage; $Npro("Error").style.display = "inline"; field.focus(); field.select(); return false; }
+				else { return true; }
+			}
+			function emptyvalidation(value, errorMessage) {
+				$Npro("Error").innerHTML = "";
+				with (value) {
+					if (trim(value) == null || trim(value) == "") {/*alert(errorMessage);*/$Npro("Error").innerHTML = errorMessage; $Npro("Error").style.display = "inline"; return false; }
+					else { return true; }			
+	}//with
+			}//emptyvalidation
+
+			function signup(thisform) {
+				var $thisform = $(thisform),
+					$email = $thisform.find('input[name="EMAIL"]');
+				with ($thisform) {
+					if (emailvalidation($email, error_1) == false) { $email.focus(); return false; };
+				}
+				$("#myResponse").hide();	// Hide the buttom and the message
+				$("#loading").show();				// show the loading image.
+				params = $thisform.serialize();
+				$.ajax({
+					url: $thisform.attr('action'),
+					type: 'GET',
+					data: params,
+					dataType: "jsonp",
+					jsonp: "c",
+					contentType: "application/json; charset=utf-8",
+
+					success: function (data) {
+						$("#loading").hide();
+						if (data['result'] === "success") {
+							$('#myResponse').css({ display: 'inline', color: 'green' })
+							$email.val('');
+							$("#myResponse").html('Thank You!');
+						}
+						else {
+							$('#myResponse').css({ display: 'inline', color: 'red' })
+							$("#myResponse").html(data['msg']);
+						}
+					},
+					error: function (xhr, status, errorThrown) {
+						$("#loading").hide();
+						$("#myResponse").html(status); //Writes the "Thank you" message that comes from optIn.php and styles it.
+						$('#myResponse').css({ display: 'inline', color: 'red' })
+					}
+				});
+				return false;
+			};
+		</script>
+		<!--Email Form-->
+		<script src="https://use.fontawesome.com/cdbff681b2.js"></script>
+		<!--PRELOADER-->
+		<script>
+				jQuery(document).ready(function ($) {
+					// site preloader -- also uncomment the div in the header and the css style for #preloader
+					$(window).load(function () {
+						$('#preloader').fadeOut('slow', function () { $(this).remove(); });
+					});
+				});
+		</script>
+		<!--PRELOADER-->
+		<!--Scroll to element-->
+		<script>
 				$('.click').click(function (e) {
 					// prevent default action
 					e.preventDefault();
-
 					// get id of target div (placed in href attribute of anchor element)
 					// and pass it to the scrollToElement function
 					// also, use 2000 as an argument for the scroll speed (2 seconds, 2000 milliseconds)
@@ -157,642 +126,680 @@
 						scrollTop: $(el).offset().top
 					}, speed);
 				}
-			});//]]> 
-	</script>
-	<script>
-			$(document).ready(function () {
-				$("body").css("display", "none");
-				$("body").fadeIn(1000);
-				$("a.transition").click(function (event) {
-					event.preventDefault();
-					linkLocation = this.href;
-					$("body").fadeOut(1000, redirectPage);
+		</script>
+		<!--Scroll to element-->
+		<!--Scroll to top-->
+		<script>
+				$(document).ready(function () {
+					//Check to see if the window is top if not then display button
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 100) {
+							$('.scrollToTop').fadeIn();
+						} else {
+							$('.scrollToTop').fadeOut();
+						}
+					});
+					//Click event to scroll to top
+					$('.scrollToTop').click(function () {
+						$('html, body').animate({ scrollTop: 0 }, 800);
+						return false;
+					});
 				});
-				function redirectPage() {
-					window.location = linkLocation;
-				}
-			});
-	</script>
-	<link href="/assets/css/animsition.css" rel="stylesheet">
-	<style media="screen">
-		.bg-init,
-		.animsition-overlay-slide {
-			background-color: #81D4FA;
-		}
-	</style>
-</head>
+		</script>
+		<!--Scroll to top-->
+		<script type="text/javascript">//<![CDATA[
+				$(window).load(function () {
+					$('.click').click(function (e) {
+						// prevent default action
+						e.preventDefault();
 
-<body>
-	<div id="preloader"></div>
-	<!-- particles.js container -->
-	<div class="main_container">
-		<div id="particles-js" style="position:absolute;z-index:-1;top:0px;"></div>
-		<div class="container">
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
-				<a href="/">
-					<img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
-				</a>
-			</div>
-			<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
-				<div class="dropdown">
-					<button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-					 aria-expanded="true">
-						Menu
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li>
-							<a href="/" target="_blank" title="">Home</a>
-						</li>
-						<li role="separator" class="divider"></li>
+						// get id of target div (placed in href attribute of anchor element)
+						// and pass it to the scrollToElement function
+						// also, use 2000 as an argument for the scroll speed (2 seconds, 2000 milliseconds)
+						scrollToElement($(this).attr('href'), 2000);
+					});
+					var scrollToElement = function (el, ms) {
+						var speed = (ms) ? ms : 600;
+						$('html,body').animate({
+							scrollTop: $(el).offset().top
+						}, speed);
+					}
+				});//]]> 
+		</script>
+		<script>
+				$(document).ready(function () {
+					$("body").css("display", "none");
+					$("body").fadeIn(1000);
+					$("a.transition").click(function (event) {
+						event.preventDefault();
+						linkLocation = this.href;
+						$("body").fadeOut(1000, redirectPage);
+					});
+					function redirectPage() {
+						window.location = linkLocation;
+					}
+				});
+		</script>
+		<link href="/assets/css/animsition.css" rel="stylesheet">
+		<style media="screen">
+			.bg-init,
+			.animsition-overlay-slide {
+				background-color: #81D4FA;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="preloader"></div>
+		<!-- particles.js container -->
+		<div class="main_container">
+			<div id="particles-js" style="position:absolute;z-index:-1;top:0px;"></div>
+			<div class="container">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
+					<a href="/">
+						<img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
+					</a>
+				</div>
+				<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+					<div class="dropdown">
+						<button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="true">
+							Menu
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li>
+								<a href="/" target="_blank" title="">Home</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="#tok" class="click">Token</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="#el1" class="click">Team</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/faq">FAQ</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/media-kit">Media Kit</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
+					<ul>
 						<li>
 							<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="#tok" class="click">Token</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="#el1" class="click">Team</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/faq">FAQ</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/media-kit">Media Kit</a>
 						</li>
+						<a href="https://blog.lendroid.com" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
+							</li>
+						</a>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
+			<div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
 				<ul>
-					<li>
-						<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
-					</li>
-					<li>
-						<a href="#tok" class="click">Token</a>
-					</li>
-					<li>
-						<a href="#el1" class="click">Team</a>
-					</li>
-					<li>
-						<a href="/faq">FAQ</a>
-					</li>
-					<li>
-						<a href="/media-kit">Media Kit</a>
-					</li>
-					<a href="https://blog.lendroid.com" class="hidden-xs">
+					<a href="#">
 						<li>
 							<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
 						</li>
 					</a>
-					<a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
+					<a href="https://www.reddit.com/user/vigsun" target="_blank">
 						<li>
 							<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
 						</li>
 					</a>
-					<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
+					<a href="https://twitter.com/lendroidproject" target="_blank">
 						<li>
 							<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
 						</li>
 					</a>
-					<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+					<a href="https://t.me/lendroidproject" target="_blank">
 						<li>
 							<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
 						</li>
 					</a>
-					<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
+					<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
 						<li>
 							<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
 						</li>
 					</a>
 				</ul>
 			</div>
-		</div>
-		<div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
-			<ul>
-				<a href="#">
-					<li>
-						<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://www.reddit.com/user/vigsun" target="_blank">
-					<li>
-						<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://twitter.com/lendroidproject" target="_blank">
-					<li>
-						<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://t.me/lendroidproject" target="_blank">
-					<li>
-						<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
-					<li>
-						<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
-					</li>
-				</a>
-			</ul>
-		</div>
-		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main_heading ">
-				<h2>Trading Reimagined </h2>
-				<p>A Non-Rent-Seeking Open Protocol for Decentralized Lending that Enables Margin Trading and Short Selling of ERC20 Tokens</p>
-				<br>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main_button">
-					<div class="email_formy">
-						<form onsubmit="return signup(this);return false;" name="subform" id="subform" action="//lendroid.us15.list-manage.com/subscribe/post-json?u=be18303ae178fe4d4a49fa791&id=ea7e4faa19"
-						 method="get">
-							<div style="margin-top:20px">
-								<div class="form-row">
-									<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-										<input id="email" value="" class="form-control form-control_custom" type="email" name="EMAIL" data-type="req" placeholder="Please Enter Your Email">
+			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main_heading ">
+					<h2>Trading Reimagined </h2>
+					<p>A Non-Rent-Seeking Open Protocol for Decentralized Lending that Enables Margin Trading and Short Selling of ERC20 Tokens</p>
+					<br>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main_button">
+						<div class="email_formy">
+							<form onsubmit="return signup(this);return false;" name="subform" id="subform" action="//lendroid.us15.list-manage.com/subscribe/post-json?u=be18303ae178fe4d4a49fa791&id=ea7e4faa19"
+							method="get">
+								<div style="margin-top:20px">
+									<div class="form-row">
+										<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+											<input id="email" value="" class="form-control form-control_custom" type="email" name="EMAIL" data-type="req" placeholder="Please Enter Your Email">
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+											<input type="submit" id="submit" name="submit" value="SUBSCRIBE" class="blue_button">
+										</div>
 									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-										<input type="submit" id="submit" name="submit" value="SUBSCRIBE" class="blue_button">
+									<br>
+									<br>
+									<div style="clear:both;width:100%;">
+										<span id="Error" style="color:red;display:none;font-size: 16px;"></span>
+									</div>
+									<div id="myResponse" style="width:100%;display:none;font-size: 19px;font-weight: 500;"></div>
+									<div id="loading" style="display:none;">
+										<img src="/assets/images/wait.gif" alt="">
 									</div>
 								</div>
-								<br>
-								<br>
-								<div style="clear:both;width:100%;">
-									<span id="Error" style="color:red;display:none;font-size: 16px;"></span>
-								</div>
-								<div id="myResponse" style="width:100%;display:none;font-size: 19px;font-weight: 500;"></div>
-								<div id="loading" style="display:none;">
-									<img src="/assets/images/wait.gif" alt="">
-								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 token_launch_heading">
-			<h3>Token Launch Registration in</h3>
-			<ul class="countdown">
-				<li>
-					<span class="days" style="color:#fff;">00</span>
-					<p class="days_ref">days</p>
-				</li>
-				<li>
-					<span class="hours" style="background: #fff;">00</span>
-					<p class="hours_ref">hours</p>
-				</li>
-				<li>
-					<span class="minutes" style="background: #fff;">00</span>
-					<p class="minutes_ref">minutes</p>
-				</li>
-				<li>
-					<span class="seconds last" style="background: #fff;">00</span>
-					<p class="seconds_ref">seconds</p>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div style="clear:both;"></div>
-	<div style="clear:both;"></div>
-	<!--main container end-->
-	<div class="main-container2">
 		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 offer_text">
-					<h3>What Lendroid Offers</h3>
-					<p>Lendroid seeks to overcome on-chain limitations of latency and impractical gas cost by creating a symbiotic off-chain
-						infrastructure supported by incentivized participants. The native token keeps the network operational, fuels the utility
-						layer of the protocol and offers security to community governance. The ecosystem nurtures a decentralized, global,
-						shared lending pool.</p>
-				</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 token_launch_heading">
+				<h3>Token Launch Registration in</h3>
+				<ul class="countdown">
+					<li>
+						<span class="days" style="color:#fff;">00</span>
+						<p class="days_ref">days</p>
+					</li>
+					<li>
+						<span class="hours" style="background: #fff;">00</span>
+						<p class="hours_ref">hours</p>
+					</li>
+					<li>
+						<span class="minutes" style="background: #fff;">00</span>
+						<p class="minutes_ref">minutes</p>
+					</li>
+					<li>
+						<span class="seconds last" style="background: #fff;">00</span>
+						<p class="seconds_ref">seconds</p>
+					</li>
+				</ul>
 			</div>
-		</div>
-	</div>
-	<div class="container-fluid" style="background:#fff;">
-		<div class="container">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
-				<p class="square_box">01</p>
-				<h4>Non-Rent-Seeking Protocol </h4>
-				<p>Lendroid is non-rent-seeking, where all transaction throughput goes to the off-chain utility actors - the 0x based Relayers
-					and the newly introduced Wranglers - who coordinate to make the network stable. </p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
-				<p class="square_box">02</p>
-				<h4>Trust-Independent and Autonomous </h4>
-				<p>Smart contracts ensure no custodianship of user funds, thus mitigating counterparty risks. This lets users and off-chain
-					keepers manage their operations without being controlled by a central authority. </p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
-				<p class="square_box">03</p>
-				<h4>Interoperability and Shared Liquidity</h4>
-				<p>Supports multiple exchanges and is compatible with exchange protocols, thus contributing to a global shared liquidity
-					pool. Lenders facilitate a global shared lending pool thereby enhancing lending liquidity. </p>
-			</div>
-
-		</div>
-	</div>
-	<br>
-	<br>
-	<div class="container-fluid blog_bg">
-		<div class="container">
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 offer_text">
-				<h3>Allies of Lendroid</h3>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-				<img src="/assets/images/allies_01.png" class="img-responsive" alt="" />
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-				<img src="/assets/images/allies_02.png" class="img-responsive" alt="" />
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-				<img src="/assets/images/allies_03.png" class="img-responsive" alt="" />
-			</div>
-		</div>
-	</div>
-	<br>
-	<br>
-	<div class="main-container3">
-		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 diagram_heading">
-				<h3>Lendroid Overview</h3>
-			</div>
-			<img src="/assets/images/diagram_desktop.png" class="img-responsive hidden-xs" style="margin:0 auto;">
-			<img src="/assets/images/Lendroid_Margin_trading_diagram_mobile-view.png" class="img-responsive hidden-lg hidden-md hidden-sm col-xs-12"
-			 style="margin:0 auto;">
-		</div>
-		<br>
-		<br>
-	</div>
-	<div class="main-container4">
-		<div class="container" id="tok">
-			<div class="hidden-lg hidden-md col-sm-12 col-xs-12 lst_icon">
-				<img src="/assets/images/LST.svg" width="400" height="235" class="img-responsive">
-			</div>
-			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 token_text">
-				<h3>Lendroid Support Token </h3>
-				<h5>Fuels transactions in the Lendroid ecosystem..</h5>
-				<p>
-					• LST is the native token of the Lendroid protocol.
-					<br> • It is non-rent seeking, meaning it does not collect any fee for itself.
-					<br> • Protocol users (Lenders, Margin Traders) pay keepers/enablers (Relayers, Wranglers) in LST.
-					<br> • The fee amounts are negotiated offline.
-					<br>
-					<span style="color:#2e368f; font-weight:bold;">• Fee amounts are negotiated offline.</span>
-					<br>
-					<br>
-					<a href="/lendroid-support-token" class="blue_button" style="margin-left:0px;">EXPLORE</a>
-				</p>
-			</div>
-			<div class="col-lg-5 col-md-5 hidden-sm hidden-xs lst_icon">
-				<img src="/assets/images/LST.svg" width="304" height="253" class="img-responsive">
-			</div>
-		</div>
-	</div>
-	<div class="container ">
-		<!-- <div class="dotted_border hidden-xs"><img src="/assets/images/border-dot.png" class="img-responsive" alt=""/></div>
-			<div class="dotted_border hidden-lg hidden-md hidden-sm col-xs-12"><img src="/assets/images/mobile_border-dot.png" class="img-responsive" alt=""/></div>-->
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 road_map">
-			<h3>Road Map</h3>
 		</div>
 		<div style="clear:both;"></div>
+		<div style="clear:both;"></div>
+		<!--main container end-->
+		<div class="main-container2">
+			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 offer_text">
+						<h3>What Lendroid Offers</h3>
+						<p>Lendroid seeks to overcome on-chain limitations of latency and impractical gas cost by creating a symbiotic off-chain
+							infrastructure supported by incentivized participants. The native token keeps the network operational, fuels the utility
+							layer of the protocol and offers security to community governance. The ecosystem nurtures a decentralized, global,
+							shared lending pool.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid" style="background:#fff;">
+			<div class="container">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
+					<p class="square_box">01</p>
+					<h4>Non-Rent-Seeking Protocol </h4>
+					<p>Lendroid is non-rent-seeking, where all transaction throughput goes to the off-chain utility actors - the 0x based Relayers
+						and the newly introduced Wranglers - who coordinate to make the network stable. </p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
+					<p class="square_box">02</p>
+					<h4>Trust-Independent and Autonomous </h4>
+					<p>Smart contracts ensure no custodianship of user funds, thus mitigating counterparty risks. This lets users and off-chain
+						keepers manage their operations without being controlled by a central authority. </p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
+					<p class="square_box">03</p>
+					<h4>Interoperability and Shared Liquidity</h4>
+					<p>Supports multiple exchanges and is compatible with exchange protocols, thus contributing to a global shared liquidity
+						pool. Lenders facilitate a global shared lending pool thereby enhancing lending liquidity. </p>
+				</div>
+
+			</div>
+		</div>
 		<br>
 		<br>
-		<div class="row">
-			<div class="animatedParent animateOnce" data-appear-top-offset="-100" data-sequence="200">
-				<div class="timeline timeline-line-dotted">
-					<span class="timeline-label">
-						<span class="label label-primary">2017</span>
-					</span>
-					<div class="timeline-item animated fadeIn" data-id="1">
-						<div class="timeline-point timeline-point-success">
-							Q1
-						</div>
-						<div class="timeline-event animated fadeInLeftShort" data-id="2">
-							<div class="timeline-heading">
-								<h4>
-									<a href="/assets/images/The Lendroid Whitepaper.pdf" target="_blank">Whitepaper on Decentralized Digital Asset Lending released</a>
-								</h4>
-							</div>
-							<div class="timeline-footer">
-								<p class="text-right"></p>
-							</div>
-						</div>
-					</div>
-					<span class="timeline-label">
-						<span class="label label-primary"></span>
-					</span>
-					<div class="timeline-item">
-						<div class="timeline-point timeline-point-success animated fadeIn" data-id="3">
-							Q2
-						</div>
-						<div class="timeline-event animated fadeInRightShort" data-id="4">
-							<div class="timeline-heading">
-								<h4>Loans for ENS names demo launched on Kovan</h4>
-							</div>
-							<div class="timeline-body">
-								<p></p>
-							</div>
-						</div>
-					</div>
-					<span class="timeline-label">
-						<span class="label label-primary"></span>
-					</span>
-					<div class="timeline-item">
-						<div class="timeline-point timeline-point-success animated fadeIn" data-id="5">
-							Q3
-						</div>
-						<div class="timeline-event animated fadeInLeftShort" data-id="6">
-							<div class="timeline-heading">
-								<h4>Whitepaper describing our approach to decentralized margin trading.</h4>
-							</div>
-						</div>
-					</div>
-					<span class="timeline-label">
-						<span class="label label-primary"></span>
-					</span>
-					<div class="timeline-item">
-						<div class="timeline-point timeline-point-success animated fadeIn" data-id="7">
-							Q4
-						</div>
-						<div class="timeline-event animated fadeInRightShort" data-id="8">
-							<div class="timeline-heading">
-								<h4>Network launch on Ethereum with support for ERC-20 tokens </h4>
-							</div>
-						</div>
-					</div>
-					<span class="timeline-label animated fadeIn" data-id="9">
-						<span class="label label-primary">2018</span>
-					</span>
-					<div class="timeline-item">
-						<div class="timeline-point timeline-point-success animated fadeIn" data-id="10">
-							Q3
-						</div>
-						<div class="timeline-event animated fadeInLeftShort" data-id="11">
-							<div class="timeline-heading">
-								<h4>Protocol/Network governance moved from multi-sig to token holder voting </h4>
-							</div>
-						</div>
-					</div>
-					<span class="timeline-label">
-						<span class="label label-primary"></span>
-					</span>
-					<div class="timeline-item">
-						<div class="timeline-point timeline-point-success animated fadeIn" data-id="12">
-							Q4
-						</div>
-						<div class="timeline-event animated fadeInRightShort" data-id="13">
-							<div class="timeline-heading">
-								<h4>Multi-chain asset support</h4>
-							</div>
-						</div>
-					</div>
+		<div class="container-fluid blog_bg">
+			<div class="container">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 offer_text">
+					<h3>Allies of Lendroid</h3>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<img src="/assets/images/allies_01.png" class="img-responsive" alt="" />
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<img src="/assets/images/allies_02.png" class="img-responsive" alt="" />
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<img src="/assets/images/allies_03.png" class="img-responsive" alt="" />
 				</div>
 			</div>
 		</div>
 		<br>
 		<br>
-		<!--<div class="dotted_border hidden-xs"><img src="/assets/images/border-dot.png" class="img-responsive" alt=""/></div>
-			<div class="dotted_border hidden-lg hidden-md hidden-sm col-xs-12"><img src="/assets/images/mobile_border-dot.png" class="img-responsive" alt=""/></div>-->
-	</div>
-	<div class="container">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 team_heading" id="el1">
-			<h3>The Lendroid Team</h3>
+		<div class="main-container3">
+			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 diagram_heading">
+					<h3>Lendroid Overview</h3>
+				</div>
+				<img src="/assets/images/diagram_desktop.png" class="img-responsive hidden-xs" style="margin:0 auto;">
+				<img src="/assets/images/Lendroid_Margin_trading_diagram_mobile-view.png" class="img-responsive hidden-lg hidden-md hidden-sm col-xs-12"
+				style="margin:0 auto;">
+			</div>
+			<br>
 			<br>
 		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/vignesh.png" class="img-responsive">
-				</li>
-				<li class="team_text">Vignesh Sundaresan</li>
-				<li class="team_text">Project Lead</li>
-				<li>
-					<a href="https://twitter.com/vigsun" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.linkedin.com/in/vigsun" target="_blank">
-						<i class="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.reddit.com/user/vigsun" target="_blank">
-						<i class="fa fa-reddit-alien" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/franca.png" class="img-responsive">
-				</li>
-				<li class="team_text">Franca Ciambella</li>
-				<li class="team_text">Legal Counsel</li>
-				<li>
-					<a href="/assets/bio-franca.docx" target="_blank">Bio</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/supriya.png" class="img-responsive">
-				</li>
-				<li class="team_text">Supriya Vasu</li>
-				<li class="team_text">Communications and Operations</li>
-				<li>
-					<a href="https://twitter.com/soupvas" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.reddit.com/user/supriyavasu/" target="_blank">
-						<i class="fa fa-reddit-alien" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div style="clear:both;"></div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/tyler.png" class="img-responsive">
-				</li>
-				<li class="team_text">Tyler Filiatrault</li>
-				<li class="team_text">Community Manager</li>
-				<li>
-					<a href="https://twitter.com/tylerkfili" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/anand.png" class="img-responsive">
-				</li>
-				<li class="team_text">Anand Venkateswaran</li>
-				<li class="team_text">Community and Communications</li>
-				<li>
-					<a href="https://www.facebook.com/vi.ananda" target="_blank">
-						<i class="fa fa-facebook" aria-hidden="true"></i>
-					</a>&nbsp;
-					<a href="twitter.com/viananda" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.linkedin.com/in/viananda/" target="_blank">
-						<i class="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/vivek.png" class="img-responsive">
-				</li>
-				<li class="team_text">Vivek</li>
-				<li class="team_text">Developer</li>
-				<li>
-					<a href="https://twitter.com/delliknoone" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.linkedin.com/in/vivek-meenakshi-sundaram-804863149/" target="_blank">
-						<i class="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div style="clear:both;"></div>
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-			<ul>
-				<li>
-					<img src="/assets/images/vii.png" class="img-responsive">
-				</li>
-				<li class="team_text">Vii</li>
-				<li class="team_text">Developer</li>
-				<li>
-					<a href="https://twitter.com/viisundaram" target="_blank">
-						<i class="fa fa-twitter" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.linkedin.com/in/vigneshmsundaram" target="_blank">
-						<i class="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-					&nbsp;
-					<a href="https://www.reddit.com/user/allkalsus" target="_blank">
-						<i class="fa fa-reddit-alien" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="container-fluid blog_bg">
-		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 team_heading">
-				<h3>Blog</h3>
-				<br>
-			</div>
-			<div class="index-content">
-				<div class="container">
-					<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="card">
-								<img src="/assets/images/blog_05.jpg">
-								<h4>Lendroid — Vision, Strategy and Progress</h4>
-
-								<a href="https://blog.lendroid.com/lendroid-vision-strategy-and-progress-5a7a4515cf41" target="_blank" class="">Read Article</a>
-							</div>
-						</div>
-					</a>
-
-					<!--<a href="https://blog.lendroid.com/lendroid-%C3%B8x-decentralized-lending-and-margin-trading-for-erc20-tokens-6145a6116dd6" target="_blank">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<div class="card">
-										<img src="/assets/images/blog_01.jpg">
-										<h4>Lendroid + 0x = Decentralised Lending and Margin Trading for ERC20 tokens </h4>
-									
-										<a href="https://blog.lendroid.com/lendroid-%C3%B8x-decentralized-lending-and-margin-trading-for-erc20-tokens-6145a6116dd6" target="_blank" class="">Read Article</a>
-									</div>
-								</div>
-							</a>-->
-					<a href="https://blog.lendroid.com/loans-for-ens-names-lendroid-testnet-demo-1b3d5f741358" target="_blank">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="card">
-								<img src="/assets/images/blog_02.jpg">
-								<h4>Loans for ENS Names (Lendroid Testnet Demo) </h4>
-
-								<a href="https://blog.lendroid.com/loans-for-ens-names-lendroid-testnet-demo-1b3d5f741358" target="_blank" class="">Read Article</a>
-							</div>
-						</div>
-					</a>
-					<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank">
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<div class="card">
-								<img src="/assets/images/blog_03.jpg">
-								<h4>Don't sell your digital assets, instead borrow against them!</h4>
-
-								<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank"
-								 class="">Read Article</a>
-							</div>
-						</div>
-					</a>
-					<div style="clear:both;"></div>
+		<div class="main-container4">
+			<div class="container" id="tok">
+				<div class="hidden-lg hidden-md col-sm-12 col-xs-12 lst_icon">
+					<img src="/assets/images/LST.svg" width="400" height="235" class="img-responsive">
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 token_text">
+					<h3>Lendroid Support Token </h3>
+					<h5>Fuels transactions in the Lendroid ecosystem..</h5>
+					<p>
+						• LST is the native token of the Lendroid protocol.
+						<br> • It is non-rent seeking, meaning it does not collect any fee for itself.
+						<br> • Protocol users (Lenders, Margin Traders) pay keepers/enablers (Relayers, Wranglers) in LST.
+						<br> • The fee amounts are negotiated offline.
+						<br>
+						<span style="color:#2e368f; font-weight:bold;">• Fee amounts are negotiated offline.</span>
+						<br>
+						<br>
+						<a href="/lendroid-support-token" class="blue_button" style="margin-left:0px;">EXPLORE</a>
+					</p>
+				</div>
+				<div class="col-lg-5 col-md-5 hidden-sm hidden-xs lst_icon">
+					<img src="/assets/images/LST.svg" width="304" height="253" class="img-responsive">
 				</div>
 			</div>
 		</div>
-	</div>
-	<br>
-	<br>
-	<div class="container">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-			<img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align:center;margin:0 auto;">
+		<div class="container ">
+			<!-- <div class="dotted_border hidden-xs"><img src="/assets/images/border-dot.png" class="img-responsive" alt=""/></div>
+				<div class="dotted_border hidden-lg hidden-md hidden-sm col-xs-12"><img src="/assets/images/mobile_border-dot.png" class="img-responsive" alt=""/></div>-->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 road_map">
+				<h3>Road Map</h3>
+			</div>
+			<div style="clear:both;"></div>
+			<br>
+			<br>
+			<div class="row">
+				<div class="animatedParent animateOnce" data-appear-top-offset="-100" data-sequence="200">
+					<div class="timeline timeline-line-dotted">
+						<span class="timeline-label">
+							<span class="label label-primary">2017</span>
+						</span>
+						<div class="timeline-item animated fadeIn" data-id="1">
+							<div class="timeline-point timeline-point-success">
+								Q1
+							</div>
+							<div class="timeline-event animated fadeInLeftShort" data-id="2">
+								<div class="timeline-heading">
+									<h4>
+										<a href="/assets/images/The Lendroid Whitepaper.pdf" target="_blank">Whitepaper on Decentralized Digital Asset Lending released</a>
+									</h4>
+								</div>
+								<div class="timeline-footer">
+									<p class="text-right"></p>
+								</div>
+							</div>
+						</div>
+						<span class="timeline-label">
+							<span class="label label-primary"></span>
+						</span>
+						<div class="timeline-item">
+							<div class="timeline-point timeline-point-success animated fadeIn" data-id="3">
+								Q2
+							</div>
+							<div class="timeline-event animated fadeInRightShort" data-id="4">
+								<div class="timeline-heading">
+									<h4>Loans for ENS names demo launched on Kovan</h4>
+								</div>
+								<div class="timeline-body">
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<span class="timeline-label">
+							<span class="label label-primary"></span>
+						</span>
+						<div class="timeline-item">
+							<div class="timeline-point timeline-point-success animated fadeIn" data-id="5">
+								Q3
+							</div>
+							<div class="timeline-event animated fadeInLeftShort" data-id="6">
+								<div class="timeline-heading">
+									<h4>Whitepaper describing our approach to decentralized margin trading.</h4>
+								</div>
+							</div>
+						</div>
+						<span class="timeline-label">
+							<span class="label label-primary"></span>
+						</span>
+						<div class="timeline-item">
+							<div class="timeline-point timeline-point-success animated fadeIn" data-id="7">
+								Q4
+							</div>
+							<div class="timeline-event animated fadeInRightShort" data-id="8">
+								<div class="timeline-heading">
+									<h4>Network launch on Ethereum with support for ERC-20 tokens </h4>
+								</div>
+							</div>
+						</div>
+						<span class="timeline-label animated fadeIn" data-id="9">
+							<span class="label label-primary">2018</span>
+						</span>
+						<div class="timeline-item">
+							<div class="timeline-point timeline-point-success animated fadeIn" data-id="10">
+								Q3
+							</div>
+							<div class="timeline-event animated fadeInLeftShort" data-id="11">
+								<div class="timeline-heading">
+									<h4>Protocol/Network governance moved from multi-sig to token holder voting </h4>
+								</div>
+							</div>
+						</div>
+						<span class="timeline-label">
+							<span class="label label-primary"></span>
+						</span>
+						<div class="timeline-item">
+							<div class="timeline-point timeline-point-success animated fadeIn" data-id="12">
+								Q4
+							</div>
+							<div class="timeline-event animated fadeInRightShort" data-id="13">
+								<div class="timeline-heading">
+									<h4>Multi-chain asset support</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<br>
+			<!--<div class="dotted_border hidden-xs"><img src="/assets/images/border-dot.png" class="img-responsive" alt=""/></div>
+				<div class="dotted_border hidden-lg hidden-md hidden-sm col-xs-12"><img src="/assets/images/mobile_border-dot.png" class="img-responsive" alt=""/></div>-->
 		</div>
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
-			<ul>
-				<li><a href="https://blog.lendroid.com" target="_blank"><li><img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive"></li>     </a></li>
-				<li><a href="https://twitter.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive"></li> </a> </li>
-				<li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive"></li> </a></li>
-				<li><a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank"><li><img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive"></li></a></li>
-			</ul>
+		<div class="container">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 team_heading" id="el1">
+				<h3>The Lendroid Team</h3>
+				<br>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/vignesh.png" class="img-responsive">
+					</li>
+					<li class="team_text">Vignesh Sundaresan</li>
+					<li class="team_text">Project Lead</li>
+					<li>
+						<a href="https://twitter.com/vigsun" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.linkedin.com/in/vigsun" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.reddit.com/user/vigsun" target="_blank">
+							<i class="fa fa-reddit-alien" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/franca.png" class="img-responsive">
+					</li>
+					<li class="team_text">Franca Ciambella</li>
+					<li class="team_text">Legal Counsel</li>
+					<li>
+						<a href="/assets/bio-franca.docx" target="_blank">Bio</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/supriya.png" class="img-responsive">
+					</li>
+					<li class="team_text">Supriya Vasu</li>
+					<li class="team_text">Communications and Operations</li>
+					<li>
+						<a href="https://twitter.com/soupvas" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.reddit.com/user/supriyavasu/" target="_blank">
+							<i class="fa fa-reddit-alien" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/tyler.png" class="img-responsive">
+					</li>
+					<li class="team_text">Tyler Filiatrault</li>
+					<li class="team_text">Community Manager</li>
+					<li>
+						<a href="https://twitter.com/tylerkfili" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/anand.png" class="img-responsive">
+					</li>
+					<li class="team_text">Anand Venkateswaran</li>
+					<li class="team_text">Community and Communications</li>
+					<li>
+						<a href="https://www.facebook.com/vi.ananda" target="_blank">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+						</a>&nbsp;
+						<a href="twitter.com/viananda" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.linkedin.com/in/viananda/" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/vivek.png" class="img-responsive">
+					</li>
+					<li class="team_text">Vivek</li>
+					<li class="team_text">Developer</li>
+					<li>
+						<a href="https://twitter.com/delliknoone" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.linkedin.com/in/vivek-meenakshi-sundaram-804863149/" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear:both;"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/vii.png" class="img-responsive">
+					</li>
+					<li class="team_text">Vii</li>
+					<li class="team_text">Developer</li>
+					<li>
+						<a href="https://twitter.com/viisundaram" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.linkedin.com/in/vigneshmsundaram" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.reddit.com/user/allkalsus" target="_blank">
+							<i class="fa fa-reddit-alien" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div style="clear:both;"></div>
+		<div class="container-fluid blog_bg">
+			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 team_heading">
+					<h3>Blog</h3>
+					<br>
+				</div>
+				<div class="index-content">
+					<div class="container">
+						<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_05.jpg">
+									<h4>Lendroid — Vision, Strategy and Progress</h4>
+
+									<a href="https://blog.lendroid.com/lendroid-vision-strategy-and-progress-5a7a4515cf41" target="_blank" class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
+						<!--<a href="https://blog.lendroid.com/lendroid-%C3%B8x-decentralized-lending-and-margin-trading-for-erc20-tokens-6145a6116dd6" target="_blank">
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										<div class="card">
+											<img src="/assets/images/blog_01.jpg">
+											<h4>Lendroid + 0x = Decentralised Lending and Margin Trading for ERC20 tokens </h4>
+										
+											<a href="https://blog.lendroid.com/lendroid-%C3%B8x-decentralized-lending-and-margin-trading-for-erc20-tokens-6145a6116dd6" target="_blank" class="">Read Article</a>
+										</div>
+									</div>
+								</a>-->
+						<a href="https://blog.lendroid.com/loans-for-ens-names-lendroid-testnet-demo-1b3d5f741358" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_02.jpg">
+									<h4>Loans for ENS Names (Lendroid Testnet Demo) </h4>
+
+									<a href="https://blog.lendroid.com/loans-for-ens-names-lendroid-testnet-demo-1b3d5f741358" target="_blank" class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+						<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_03.jpg">
+									<h4>Don't sell your digital assets, instead borrow against them!</h4>
+
+									<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank"
+									class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+						<div style="clear:both;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<br>
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
-			<p>Email: connect@lendroid.com </p>
-		</div>
 		<br>
-		<br>
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-			<p>© 2017 Lendroid</p>
-			<p>Design by:
-				<a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
-			</p>
+		<div class="container">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
+				<img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align:center;margin:0 auto;">
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
+				<ul>
+					<li><a href="https://blog.lendroid.com" target="_blank"><li><img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive"></li>     </a></li>
+					<li><a href="https://twitter.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive"></li> </a> </li>
+					<li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive"></li> </a></li>
+					<li><a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank"><li><img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive"></li></a></li>
+				</ul>
+			</div>
+			<div style="clear:both;"></div>
+			<br>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
+				<p>Email: connect@lendroid.com </p>
+			</div>
+			<br>
+			<br>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
+				<p>© 2017 Lendroid</p>
+				<p>Design by:
+					<a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
+				</p>
+			</div>
 		</div>
-	</div>
-	<a href="#" class="scrollToTop hidden-xs"></a>
-	<script>
-			// tell the embed parent frame the height of the content
-			if (window.parent && window.parent.parent) {
-				window.parent.parent.postMessage(["resultsFrame", {
-					height: document.body.getBoundingClientRect().height,
-					slug: "dtR34"
-				}], "*")
-			}
-	</script>
-	<!-- Particle JS -->
-	<script src="/assets/js/particles.js"></script>
-	<script src="/assets/js/app.js"></script>
-	<!-- Particle JS -->
-	<script src="/assets/js/css3-animate-it.js"></script>
-</body>
+		<a href="#" class="scrollToTop hidden-xs"></a>
+		<script>
+				// tell the embed parent frame the height of the content
+				if (window.parent && window.parent.parent) {
+					window.parent.parent.postMessage(["resultsFrame", {
+						height: document.body.getBoundingClientRect().height,
+						slug: "dtR34"
+					}], "*")
+				}
+		</script>
+		<!-- Particle JS -->
+		<script src="/assets/js/particles.js"></script>
+		<script src="/assets/js/app.js"></script>
+		<!-- Particle JS -->
+		<script src="/assets/js/css3-animate-it.js"></script>
+	</body>
 
 </html>

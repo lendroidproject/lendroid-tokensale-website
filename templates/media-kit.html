@@ -1,421 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<title>Lendroid | Decentralized Margin Trading</title>
-	<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
-	<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-	<meta name="author" content="Vincent Garreau" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" media="screen" href="/assets/css/style.css">
-	<link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/table.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
-	<link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="/assets/js/bootstrap.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-
-	<!--Jquery Countdown-->
-
-	<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
-	<script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
-	<style>
-		@import url(http://fonts.googleapis.com/css?family=Raleway);
-		.faq-header {
-			font-size: 2em;
-			border-bottom: 1px dotted #ccc;
-			padding: 1em 0;
-		}
-
-		.faq-c {
-			border-bottom: 1px dotted #ccc;
-			padding: 1em 0;
-		}
-
-		.faq-t {
-			line-height: 1em;
-			color: #aaa;
-			font-family: sans-serif;
-			float: left;
-			font-weight: 700;
-			padding-right: 0.3em;
-			-webkit-transition: all 200ms;
-			-moz-transition: all 200ms;
-			transition: all 200ms;
-		}
-
-		.faq-o {
-			transform: rotate(-45deg);
-			transform-origin: 50% 50%;
-			-ms-transform: rotate(-45deg);
-			-ms-transform-origin: 50% 50%;
-			-webkit-transform: rotate(-45deg);
-			-webkit-transform-origin: 50% 50%;
-			-webkit-transition: all 200ms;
-			-moz-transition: all 200ms;
-			transition: all 200ms;
-		}
-
-		.faq-q {
-			cursor: pointer;
-			font-size: 1.5em;
-			font-weight: 100;
-		}
-
-		.faq-a {
-			clear: both;
-			color: #666;
-			display: none;
-			padding-left: 1.5em;
-		}
-	</style>
-
-
-	<script>
-
-		$(document).ready(function () {
-
-			$("body").css("display", "none");
-
-			$("body").fadeIn(1000);
-
-			$("a.transition").click(function (event) {
-				event.preventDefault();
-				linkLocation = this.href;
-				$("body").fadeOut(1000, redirectPage);
-			});
-
-			function redirectPage() {
-				window.location = linkLocation;
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108365153-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'UA-108365153-1');
+		</script>
+		<meta charset="utf-8">
+		<title>Lendroid | Decentralized Margin Trading</title>
+		<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+		<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+		<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+		<meta name="author" content="Vincent Garreau" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" media="screen" href="/assets/css/style.css">
+		<link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/table.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="/assets/js/bootstrap.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+		<!--Jquery Countdown-->
+		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
+		<script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
+		<style>
+			@import url(http://fonts.googleapis.com/css?family=Raleway);
+			.faq-header {
+				font-size: 2em;
+				border-bottom: 1px dotted #ccc;
+				padding: 1em 0;
 			}
-
-		});
-	</script>
-
-
-
-
-
-</head>
-
-<body>
-
-
-	<!-- particles.js container -->
-	<div class="main_container">
-
-
-		<div class="container">
-
-			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
-
-				<a href="/">
-					<img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
-				</a>
-
-
-			</div>
-
-			<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
-				<div class="dropdown">
-					<button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-					 aria-expanded="true">
-						Menu
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li>
-							<a href="/" target="_blank" title="">Home</a>
-						</li>
-						<li role="separator" class="divider"></li>
+			.faq-c {
+				border-bottom: 1px dotted #ccc;
+				padding: 1em 0;
+			}
+			.faq-t {
+				line-height: 1em;
+				color: #aaa;
+				font-family: sans-serif;
+				float: left;
+				font-weight: 700;
+				padding-right: 0.3em;
+				-webkit-transition: all 200ms;
+				-moz-transition: all 200ms;
+				transition: all 200ms;
+			}
+			.faq-o {
+				transform: rotate(-45deg);
+				transform-origin: 50% 50%;
+				-ms-transform: rotate(-45deg);
+				-ms-transform-origin: 50% 50%;
+				-webkit-transform: rotate(-45deg);
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transition: all 200ms;
+				-moz-transition: all 200ms;
+				transition: all 200ms;
+			}
+			.faq-q {
+				cursor: pointer;
+				font-size: 1.5em;
+				font-weight: 100;
+			}
+			.faq-a {
+				clear: both;
+				color: #666;
+				display: none;
+				padding-left: 1.5em;
+			}
+		</style>
+		<script>
+			$(document).ready(function () {
+				$("body").css("display", "none");
+				$("body").fadeIn(1000);
+				$("a.transition").click(function (event) {
+					event.preventDefault();
+					linkLocation = this.href;
+					$("body").fadeOut(1000, redirectPage);
+				});
+				function redirectPage() {
+					window.location = linkLocation;
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<!-- particles.js container -->
+		<div class="main_container">
+			<div class="container">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
+					<a href="/">
+						<img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
+					</a>
+				</div>
+				<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+					<div class="dropdown">
+						<button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="true">
+							Menu
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li>
+								<a href="/" target="_blank" title="">Home</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/#tok" class="click">Token</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/#el1" class="click">Team</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/faq">FAQ</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="/media-kit">Media Kit</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
+					<ul>
 						<li>
 							<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/#tok" class="click">Token</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/#el1" class="click">Team</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/faq">FAQ</a>
 						</li>
-						<li role="separator" class="divider"></li>
 						<li>
 							<a href="/media-kit">Media Kit</a>
 						</li>
+						<a href="https://blog.lendroid.com" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
+							</li>
+						</a>
+						<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
+							<li>
+								<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
+							</li>
+						</a>
 					</ul>
 				</div>
-
-
-
-
 			</div>
-
-			<div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
-
+			<div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
 				<ul>
-
-					<li>
-						<a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
-					</li>
-					<li>
-						<a href="/#tok" class="click">Token</a>
-					</li>
-					<li>
-						<a href="/#el1" class="click">Team</a>
-					</li>
-					<li>
-						<a href="/faq">FAQ</a>
-					</li>
-					<li>
-						<a href="/media-kit">Media Kit</a>
-					</li>
-
-
-					<a href="https://blog.lendroid.com" class="hidden-xs">
+					<a href="https://blog.lendroid.com">
 						<li>
 							<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
 						</li>
 					</a>
-
-					<a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
-
+					<a href="https://www.reddit.com/user/vigsun" target="_blank">
 						<li>
 							<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
 						</li>
-
 					</a>
-					<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
-
+					<a href="https://twitter.com/lendroidproject" target="_blank">
 						<li>
 							<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
 						</li>
-
 					</a>
-					<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
-
+					<a href="https://t.me/lendroidproject" target="_blank">
 						<li>
 							<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
 						</li>
-
 					</a>
-					<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
-
+					<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
 						<li>
 							<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
 						</li>
 					</a>
-
-
-
 				</ul>
-
 			</div>
-
-
-
-
-
-
-
-
-		</div>
-
-		<div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
-
-			<ul>
-
-
-
-				<a href="https://blog.lendroid.com">
-					<li>
-						<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://www.reddit.com/user/vigsun" target="_blank">
-					<li>
-						<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://twitter.com/lendroidproject" target="_blank">
-					<li>
-						<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://t.me/lendroidproject" target="_blank">
-					<li>
-						<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
-					</li>
-				</a>
-				<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
-					<li>
-						<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
-					</li>
-				</a>
-
-
-
-
-
-			</ul>
-
-
-		</div>
-		<br>
-
-
-		<div class="container">
-
-
-
-			<div class="faq-header">Media Kit</div>
-
-
 			<br>
-
-
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
-
-
-				<img src="/assets/images/logo-media-kit.jpg" class="img-responsive" alt="" />
-
-				<h3>Logo</h3>
+			<div class="container">
+				<div class="faq-header">Media Kit</div>
 				<br>
-				<a href="/assets/media-kit/lendroid-logo.pdf" target="_new" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
-				<br>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
+					<img src="/assets/images/logo-media-kit.jpg" class="img-responsive" alt="" />
+					<h3>Logo</h3>
+					<br>
+					<a href="/assets/media-kit/lendroid-logo.pdf" target="_new" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
+					<br>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
+					<img src="/assets/images/team-media-kit.jpg" class="img-responsive" alt="" />
+					<br>
+					<h3>Team Photos</h3>
+					<br>
+					<a href="/assets/media-kit/team.zip" target="_blank" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
+					<img src="/assets/images/whitepaper-media-kit.jpg" class="img-responsive" alt="" />
+					<br>
+					<h3>Whitepaper</h3>
+					<br>
+					<a href="/assets/media-kit/The Lendroid Whitepaper.pdf" target="_new" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 ">
+					<img src="/assets/images/lendroid-overviewmediakit.jpg" class="img-responsive" alt="" />
+					<br>
+					<h3>Overview</h3>
+					<br>
+					<a href="/assets/media-kit/lendroid-overview.pdf" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-top: 20px;">
+					<img src="/assets/images/media-kit.jpg" class="img-responsive" alt="" />
+					<br>
+					<h3>Media Kit</h3>
+					<br>
+					<a href="/assets/media-kit/media kit.pdf" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
+				</div>
 			</div>
-
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
-
-
-
-				<img src="/assets/images/team-media-kit.jpg" class="img-responsive" alt="" />
-				<br>
-				<h3>Team Photos</h3>
-				<br>
-				<a href="/assets/media-kit/team.zip" target="_blank" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
-
-			</div>
-
-
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-bottom: 40px;">
-
-				<img src="/assets/images/whitepaper-media-kit.jpg" class="img-responsive" alt="" />
-				<br>
-				<h3>Whitepaper</h3>
-				<br>
-				<a href="/assets/media-kit/The Lendroid Whitepaper.pdf" target="_new" class="blue_button" target="_new"
-				 style="margin-left:0px;">Download</a>
-
-			</div>
-
-
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 ">
-				<img src="/assets/images/lendroid-overviewmediakit.jpg" class="img-responsive" alt="" />
-				<br>
-				<h3>Overview</h3>
-				<br>
-
-				<a href="/assets/media-kit/lendroid-overview.pdf" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
-
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<div class="container">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
+					<img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align:center;margin:0 auto;">
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
+					<ul>
+						<li>
+							<a href="https://blog.lendroid.com" target="_blank">
+								<li>
+									<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
+								</li>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/lendroidproject" target="_blank">
+								<li>
+									<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
+								</li>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/lendroidproject" target="_blank">
+								<li>
+									<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
+								</li>
+							</a>
+						</li>
+						<li>
+							<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
+								<li>
+									<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
+								</li>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div style="clear:both;"></div>
-
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " style="margin-top: 20px;">
-
-				<img src="/assets/images/media-kit.jpg" class="img-responsive" alt="" />
-				<br>
-				<h3>Media Kit</h3>
-				<br>
-
-				<a href="/assets/media-kit/media kit.pdf" class="blue_button" target="_new" style="margin-left:0px;">Download</a>
-
+			<br>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
+				<p>Email: connect@lendroid.com </p>
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-		<br>
-		<br>
-
-		<br>
-		<br>
-		<br>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
-		<div class="container">
-
+			<br>
+			<br>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-
-				<img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align: center;
-    margin: 0 auto;">
-
+				<p>© 2017 Lendroid</p>
+				<p>Design by:
+					<a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
+				</p>
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
-				<ul>
-					<li><a href="https://blog.lendroid.com" target="_blank"><li><img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive"></li>     </a></li>
-					<li><a href="https://twitter.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive"></li> </a> </li>
-					<li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive"></li> </a></li>
-					<li><a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank"><li><img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive"></li></a></li>
-				</ul>
-			</div>
-
 		</div>
-		<div style="clear:both;"></div>
-		<br>
-
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
-
-			<p>Email: connect@lendroid.com </p>
-
-		</div>
-		<br>
-		<br>
-
-
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-			<p>© 2017 Lendroid</p>
-			<p>Design by:
-				<a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
-			</p>
-		</div>
-
-
-	</div>
-
-	</div>
-
-
-
-
-
-	<!-- Particle JS -->
-</body>
-
+	</body>
 </html>
