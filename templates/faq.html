@@ -1,530 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Lendroid | Decentralized Margin Trading</title>
-  <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
-  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-  <meta name="author" content="Vincent Garreau" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" media="screen" href="/assets/css/style.css">
-  <link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
-  <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
-  <link href="/assets/css/table.css" rel="stylesheet" type="text/css">
-  <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
-  <link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="/assets/js/bootstrap.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-
-  <!--Jquery Countdown-->
-
-  <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
-  <script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
-  <style>
-    @import url(http://fonts.googleapis.com/css?family=Raleway);
-    .faq-header {
-      font-size: 2em;
-      border-bottom: 1px dotted #ccc;
-      padding: 1em 0;
-    }
-
-    .faq-c {
-      border-bottom: 1px dotted #ccc;
-      padding: 1em 0;
-    }
-
-    .faq-t {
-      line-height: 1em;
-      color: #aaa;
-      font-family: sans-serif;
-      float: left;
-      font-weight: 700;
-      padding-right: 0.3em;
-      -webkit-transition: all 200ms;
-      -moz-transition: all 200ms;
-      transition: all 200ms;
-    }
-
-    .faq-o {
-      transform: rotate(-45deg);
-      transform-origin: 50% 50%;
-      -ms-transform: rotate(-45deg);
-      -ms-transform-origin: 50% 50%;
-      -webkit-transform: rotate(-45deg);
-      -webkit-transform-origin: 50% 50%;
-      -webkit-transition: all 200ms;
-      -moz-transition: all 200ms;
-      transition: all 200ms;
-    }
-
-    .faq-q {
-      cursor: pointer;
-      font-size: 1.5em;
-      font-weight: 100;
-    }
-
-    .faq-a {
-      clear: both;
-      color: #666;
-      display: none;
-      padding-left: 1.5em;
-    }
-  </style>
-
-
-  <script>
-
-    $(document).ready(function () {
-
-      $("body").css("display", "none");
-
-      $("body").fadeIn(1000);
-
-      $("a.transition").click(function (event) {
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(1000, redirectPage);
-      });
-
-      function redirectPage() {
-        window.location = linkLocation;
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108365153-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-108365153-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Lendroid | Decentralized Margin Trading</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="/assets/css/style.css">
+    <link href="/assets/css/style_sheet.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/timeline.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/table.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!--Jquery Countdown-->
+    <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Raleway);
+      .faq-header {
+        font-size: 2em;
+        border-bottom: 1px dotted #ccc;
+        padding: 1em 0;
       }
-
-    });
-  </script>
-
-
-
-
-
-</head>
-
-<body>
-
-
-  <!-- particles.js container -->
-  <div class="main_container">
-
-
-    <div class="container">
-
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
-
-        <a href="/">
-          <img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
-        </a>
-
-
-      </div>
-
-      <div class="hidden-lg hidden-md col-sm-12 col-xs-12">
-        <div class="dropdown">
-          <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="true">
-            Menu
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li>
-              <a href="/" target="_blank" title="">Home</a>
-            </li>
-            <li role="separator" class="divider"></li>
+      .faq-c {
+        border-bottom: 1px dotted #ccc;
+        padding: 1em 0;
+      }
+      .faq-t {
+        line-height: 1em;
+        color: #aaa;
+        font-family: sans-serif;
+        float: left;
+        font-weight: 700;
+        padding-right: 0.3em;
+        -webkit-transition: all 200ms;
+        -moz-transition: all 200ms;
+        transition: all 200ms;
+      }
+      .faq-o {
+        transform: rotate(-45deg);
+        transform-origin: 50% 50%;
+        -ms-transform: rotate(-45deg);
+        -ms-transform-origin: 50% 50%;
+        -webkit-transform: rotate(-45deg);
+        -webkit-transform-origin: 50% 50%;
+        -webkit-transition: all 200ms;
+        -moz-transition: all 200ms;
+        transition: all 200ms;
+      }
+      .faq-q {
+        cursor: pointer;
+        font-size: 1.5em;
+        font-weight: 100;
+      }
+      .faq-a {
+        clear: both;
+        color: #666;
+        display: none;
+        padding-left: 1.5em;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("body").css("display", "none");
+        $("body").fadeIn(1000);
+        $("a.transition").click(function (event) {
+          event.preventDefault();
+          linkLocation = this.href;
+          $("body").fadeOut(1000, redirectPage);
+        });
+        function redirectPage() {
+          window.location = linkLocation;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- particles.js container -->
+    <div class="main_container">
+      <div class="container">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
+          <a href="/">
+            <img src="/assets/images/logo.svg" width="147" height="111" class="img-responsive">
+          </a>
+        </div>
+        <div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+          <div class="dropdown">
+            <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">
+              Menu
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li>
+                <a href="/" target="_blank" title="">Home</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="/#tok" class="click">Token</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="/#el1" class="click">Team</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="/faq">FAQ</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="/media-kit">Media Kit</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
+          <ul>
             <li>
               <a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="/#tok" class="click">Token</a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="/#el1" class="click">Team</a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="/faq">FAQ</a>
             </li>
-            <li role="separator" class="divider"></li>
             <li>
               <a href="/media-kit">Media Kit</a>
             </li>
+            <a href="https://blog.lendroid.com" class="hidden-xs">
+              <li>
+                <img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
+              </li>
+            </a>
+            <a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
+              <li>
+                <img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
+              </li>
+            </a>
+            <a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
+              <li>
+                <img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
+              </li>
+            </a>
+            <a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+              <li>
+                <img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
+              </li>
+            </a>
+            <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
+              <li>
+                <img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
+              </li>
+            </a>
           </ul>
         </div>
-
-
-
-
       </div>
-
-      <div class="col-lg-7 col-md-7 hidden-sm hidden-xs menu col-lg-offset-2 col-md-offset-2">
-
+      <div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
         <ul>
-
-          <li>
-            <a href="https://lendroid.com/assets/whitepaper-margin-trading.pdf" target="_blank" title="Whitepaper">Whitepaper</a>
-          </li>
-          <li>
-            <a href="/#tok" class="click">Token</a>
-          </li>
-          <li>
-            <a href="/#el1" class="click">Team</a>
-          </li>
-          <li>
-            <a href="/faq">FAQ</a>
-          </li>
-          <li>
-            <a href="/media-kit">Media Kit</a>
-          </li>
-
-
-          <a href="https://blog.lendroid.com" class="hidden-xs">
+          <a href="https://blog.lendroid.com">
             <li>
               <img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
             </li>
           </a>
-
-          <a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
-
+          <a href="https://www.reddit.com/user/vigsun" target="_blank">
             <li>
               <img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
             </li>
-
           </a>
-          <a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
-
+          <a href="https://twitter.com/lendroidproject" target="_blank">
             <li>
               <img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
             </li>
-
           </a>
-          <a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
-
+          <a href="https://t.me/lendroidproject" target="_blank">
             <li>
               <img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
             </li>
-
           </a>
-          <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
-
+          <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
             <li>
               <img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
             </li>
           </a>
-
-
-
         </ul>
-
       </div>
-
-
-
-
-
-
-
-
-    </div>
-
-    <div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
-
-      <ul>
-
-
-
-        <a href="https://blog.lendroid.com">
-          <li>
-            <img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
-          </li>
-        </a>
-        <a href="https://www.reddit.com/user/vigsun" target="_blank">
-          <li>
-            <img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
-          </li>
-        </a>
-        <a href="https://twitter.com/lendroidproject" target="_blank">
-          <li>
-            <img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
-          </li>
-        </a>
-        <a href="https://t.me/lendroidproject" target="_blank">
-          <li>
-            <img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
-          </li>
-        </a>
-        <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
-          <li>
-            <img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
-          </li>
-        </a>
-
-
-
-
-
-      </ul>
-
-
-    </div>
-    <br>
-
-
-    <div class="container">
-
-      <div class="faq-header">Frequently Asked Questions</div>
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>What is Lendroid?</div>
-        <div class="faq-a">
-          <p>Lendroid is a 0x-inspired, non-rent seeking, trust-independent, open protocol enabling decentralized lending, margin
-            trading and short selling on the Ethereum blockchain. It aims to solve the shortcomings of centralized exchanges
-            by creating a global shared lending pool, and a symbiotic off-chain infrastructure supported by incentivized
-            participants - Relayers and Wranglers. Simply put, Lenders contribute their offers to the lending pool through
-            relayers, who then match the offers with appropriate traders. The traders can use the borrowed funds to margin
-            trade, make a profit, and repay the lenders. </p>
+      <br>
+      <div class="container">
+        <div class="faq-header">Frequently Asked Questions</div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>What is Lendroid?
+          </div>
+          <div class="faq-a">
+            <p>Lendroid is a 0x-inspired, non-rent seeking, trust-independent, open protocol enabling decentralized lending, margin
+              trading and short selling on the Ethereum blockchain. It aims to solve the shortcomings of centralized exchanges
+              by creating a global shared lending pool, and a symbiotic off-chain infrastructure supported by incentivized
+              participants - Relayers and Wranglers. Simply put, Lenders contribute their offers to the lending pool through
+              relayers, who then match the offers with appropriate traders. The traders can use the borrowed funds to margin
+              trade, make a profit, and repay the lenders.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>What is Margin Trading?
+          </div>
+          <div class="faq-a">
+            <p>If a trader wishes to monetize his confidence in the price of an asset increasing/decreasing, he would take a position
+              by purchasing/selling the asset. If he is extremely certain, he would build a leveraged position by borrowing
+              additional funds from a lender to magnify his profits.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>How does Lendroid enable lending and margin trading?
+          </div>
+          <div class="faq-a">
+            <p>
+              Lending - A borrower pledges digital assets into an escrow account, with specific terms for the loan set in a smart contract.
+              If the lender’s and borrower’s terms match, the smart contract is executed, locking in the collateral and releasing
+              the funds to the borrower funds. If the loan obligations are satisfied by the borrower, his collateral is unlocked
+              automatically. If the borrower defaults or the collateral drops below the agreed loan to value, the collateral
+              is liquidated.
+              <br>
+              <br>
+              Margin trading - A margin trader starts by depositing collateral. The trader is allowed to borrow up to a certain
+              leverage to the point where the margin level is greater that the initial level (set through community governance).
+              The borrowed funds come from the shared lending pool to which the lenders can submit offers. With the borrowed
+              funds, the trader interacts with order-books to calibrate positions to reflect expectations from future price
+              movements. Once the traders feel it’s time to unwind their position, the trader once again interacts with the
+              order book.
+              <br>
+              <br> If the trader made a profit, he can repay the lenders and withdraw the profit along with his collateral.
+              <br> If a loss is incurred, the trader is expected to deposit the difference to compensate for the losses, repay
+              the loans in full and only then withdraw collateral.
+              <br> If the account reaches liquidation levels, the wranglers step in and take over the account/positions.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>What type of digital /assets/tokens are supported by Lendroid?
+          </div>
+          <div class="faq-a">
+            <p>
+              Lendroid is compatible with any ERC20-based token. This gives the margin trader a high level of flexibility with respect
+              to the nature of collateral he can deposit against a loan. A Margin Trader is free to deposit not just one kind
+              of collateral in a token of his choice, but multiple kinds of ERC20-based tokens at the same time, in the same
+              margin account. In what is envisioned as a community-driven governance model, the protocol will add or remove
+              support for a token based on the current volatility of the token.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>How does a Lender participate?
+          </div>
+          <div class="faq-a">
+            <p>
+              Analogous to the Maker from the 0x protocol, the lender broadcasts the loan-offer to all decentralized exchanges (off-chain
+              action). The lender deposits the funds into the Funding Account of the Lendroid Smart Contract System. To lubricate
+              the inherent processes, the lender deposits some LST (Lendroid Support Token) meant for the Relayer at the end
+              of the loan period. Some he deposits for the Wrangler in the event that it was he who identified the Margin Account
+              at liquidation level and helped close the loan. The LSTs required for these processes are locked in at the time
+              of initiation. If there is not enough LST for these processes, the loan is not initialized.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>How does a borrower margin trade?
+          </div>
+          <div class="faq-a">
+            <p>
+              On Lendroid, the Margin Trader enjoys leveraged lending in a uniquely decentralized environment. A Margin Trader can avail
+              a loan through his Relayer. Offers are signed by the respective Lenders who made them are available with the
+              Relayer. He avails the loan, deposits collateral and engages in margin trading/short selling. He opens a margin
+              account, within which he is free to change positions or add collateral (if the health of the margin account dips).
+              He can withdraw his collateral or liquidate his Margin Account when there are no loans owed.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>Who are Relayers, and what do they do?
+          </div>
+          <div class="faq-a">
+            <p>
+              The Relayer is the first point of contact for both lender and trader on the Lendroid protocol. Off chain, this entity effectively
+              takes up the liquidity related functions of an exchange, in a wholly decentralized manner. The one significant
+              addition to the Lendroid Relayer over its 0x counterpart is the management of loan offers. Relayers provide an
+              interface, and manage order books and offer books. They are key to creating the shared global lending pool, and
+              have complete access to it. The collective of loan offers recorded with not just one particular Relayer, but
+              with the entire community of Relayers on the protocol.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>What is the role of a Wrangler?
+          </div>
+          <div class="faq-a">
+            <p>
+              The Wrangler is an entity conceptualized for the Lendroid ecosystem. One of two incentivized actors within the protocol,
+              the Wrangler is intended to perform a computationally intensive role, that of monitoring the Margin Accounts.
+              By monitoring and ‘Wrangling’ terminal accounts (at liquidation level), the Wrangler maintains the general health
+              of the ecosystem, while also protecting the interests of the Lenders. From the creation of a Margin Account,
+              to every state change in position, adding of collateral, right until the account is liquidated, the Wrangler
+              keeps tabs on each development. Whenever there is a change in state, the Wrangler notifies the Smart Contract
+              System, which then triggers an Oracle call and subsequently checks the margin level of the account.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>How does the Lendroid Auction occur?
+          </div>
+          <div class="faq-a">
+            <p>
+              When a Wrangler identifies a terminal margin account, the claim is verified by the smart contract. If ratified, the Wrangler
+              is awarded a bounty (part of the loan offer object, deposited by the Lender) and the auction is triggered. The
+              Lendroid auction is not winner take all. The trader’s collateral and positions are taken over, but not by any
+              single Wrangler. Every Wrangler chooses to repay a small portion of total outstanding loan and his bid would
+              be proportionately considered.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>What are LSTs? What is their utility on Lendroid?
+          </div>
+          <div class="faq-a">
+            <p>
+              The Lendroid Support Token, or LST, is the native token of the Lendroid protocol. Participation on the protocol requires
+              a user to possess LSTs. Those that do not are incentivized to earn LSTs by engaging in activities that contribute
+              to the health of the ecosystem. As with all ERC20 tokens, LSTs will be tradeable following the crowd sale.
+              <br> 
+              The LST enables utility and lubricates processes on the protocol. There are four players on the protocol, two
+              of which provide utility - the Relayers and the Wranglers, and two others who avail of these utilities and participate
+              to maximize profits - the Lenders and the Borrowers/Margin Traders. On Lendroid, the toll for service or utility
+              providers on the protocol is baked into the system. Even without possessing a single token of LST, a user might
+              participate on Lendroid. As a Wrangler, he can monitor Margin Accounts and choose to earn LSTs by identifying
+              those accounts at liquidation level. In other words, they can be part of the network even without LSTs, by pitching
+              in to provide vital services like monitoring loan lifecycles and margin accounts.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>Token launch details
+          </div>
+          <div class="faq-a">
+            <p>
+              The total supply of tokens is 6,000,000,000 LST. The token launch will take place on Novermber 25th, 2017. ETH is the only
+              accepted currency during the launch.
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>Where is Lendroid based?
+          </div>
+          <div class="faq-a">
+            <p>
+              Lendroid was founded in Canada, and is currently based in Singapore..
+            </p>
+          </div>
+        </div>
+        <div class="faq-c">
+          <div class="faq-q">
+            <span class="faq-t">+</span>How do I join the community?
+          </div>
+          <div class="faq-a">
+            <p>
+              Join us on
+              <a href="https://t.me/lendroidproject" target="_blank">Telegram</a> and
+              <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">Riot</a>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>What is Margin Trading? </div>
-        <div class="faq-a">
-          <p>If a trader wishes to monetize his confidence in the price of an asset increasing/decreasing, he would take a position
-            by purchasing/selling the asset. If he is extremely certain, he would build a leveraged position by borrowing
-            additional funds from a lender to magnify his profits. </p>
+      <br>
+      <br>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script>
+        $(".faq-q").click(function () {
+          var container = $(this).parents(".faq-c");
+          var answer = container.find(".faq-a");
+          var trigger = container.find(".faq-t");
+          answer.slideToggle(200);
+          if (trigger.hasClass("faq-o")) {
+            trigger.removeClass("faq-o");
+          }
+          else {
+            trigger.addClass("faq-o");
+          }
+        });
+      </script>
+      <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
+          <img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align:center;margin:0 auto;">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
+          <ul>
+            <li>
+              <a href="https://blog.lendroid.com" target="_blank">
+                <li>
+                  <img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
+                </li>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/lendroidproject" target="_blank">
+                <li>
+                  <img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
+                </li>
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/lendroidproject" target="_blank">
+                <li>
+                  <img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
+                </li>
+              </a>
+            </li>
+            <li>
+              <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
+                <li>
+                  <img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
+                </li>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>How does Lendroid enable lending and margin trading? </div>
-        <div class="faq-a">
-          <p>
-
-            Lending - A borrower pledges digital assets into an escrow account, with specific terms for the loan set in a smart contract.
-            If the lender’s and borrower’s terms match, the smart contract is executed, locking in the collateral and releasing
-            the funds to the borrower funds. If the loan obligations are satisfied by the borrower, his collateral is unlocked
-            automatically. If the borrower defaults or the collateral drops below the agreed loan to value, the collateral
-            is liquidated.
-            <br>
-            <br> Margin trading - A margin trader starts by depositing collateral. The trader is allowed to borrow up to a certain
-            leverage to the point where the margin level is greater that the initial level (set through community governance).
-            The borrowed funds come from the shared lending pool to which the lenders can submit offers. With the borrowed
-            funds, the trader interacts with order-books to calibrate positions to reflect expectations from future price
-            movements. Once the traders feel it’s time to unwind their position, the trader once again interacts with the
-            order book.
-            <br>
-            <br> If the trader made a profit, he can repay the lenders and withdraw the profit along with his collateral.
-            <br> If a loss is incurred, the trader is expected to deposit the difference to compensate for the losses, repay
-            the loans in full and only then withdraw collateral.
-            <br> If the account reaches liquidation levels, the wranglers step in and take over the account/positions. </p>
-        </div>
+      <div style="clear:both;"></div>
+      <br>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
+        <p>Email: connect@lendroid.com </p>
       </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>What type of digital /assets/tokens are supported by Lendroid? </div>
-        <div class="faq-a">
-          <p>
-
-            Lendroid is compatible with any ERC20-based token. This gives the margin trader a high level of flexibility with respect
-            to the nature of collateral he can deposit against a loan. A Margin Trader is free to deposit not just one kind
-            of collateral in a token of his choice, but multiple kinds of ERC20-based tokens at the same time, in the same
-            margin account. In what is envisioned as a community-driven governance model, the protocol will add or remove
-            support for a token based on the current volatility of the token. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>How does a Lender participate? </div>
-        <div class="faq-a">
-          <p>
-            Analogous to the Maker from the 0x protocol, the lender broadcasts the loan-offer to all decentralized exchanges (off-chain
-            action). The lender deposits the funds into the Funding Account of the Lendroid Smart Contract System. To lubricate
-            the inherent processes, the lender deposits some LST (Lendroid Support Token) meant for the Relayer at the end
-            of the loan period. Some he deposits for the Wrangler in the event that it was he who identified the Margin Account
-            at liquidation level and helped close the loan. The LSTs required for these processes are locked in at the time
-            of initiation. If there is not enough LST for these processes, the loan is not initialized. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>How does a borrower margin trade? </div>
-        <div class="faq-a">
-          <p>
-            On Lendroid, the Margin Trader enjoys leveraged lending in a uniquely decentralized environment. A Margin Trader can avail
-            a loan through his Relayer. Offers are signed by the respective Lenders who made them are available with the
-            Relayer. He avails the loan, deposits collateral and engages in margin trading/short selling. He opens a margin
-            account, within which he is free to change positions or add collateral (if the health of the margin account dips).
-            He can withdraw his collateral or liquidate his Margin Account when there are no loans owed. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>Who are Relayers, and what do they do? </div>
-        <div class="faq-a">
-          <p>
-            The Relayer is the first point of contact for both lender and trader on the Lendroid protocol. Off chain, this entity effectively
-            takes up the liquidity related functions of an exchange, in a wholly decentralized manner. The one significant
-            addition to the Lendroid Relayer over its 0x counterpart is the management of loan offers. Relayers provide an
-            interface, and manage order books and offer books. They are key to creating the shared global lending pool, and
-            have complete access to it. The collective of loan offers recorded with not just one particular Relayer, but
-            with the entire community of Relayers on the protocol. </p>
-        </div>
-      </div>
-
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>What is the role of a Wrangler? </div>
-        <div class="faq-a">
-          <p>
-            The Wrangler is an entity conceptualized for the Lendroid ecosystem. One of two incentivized actors within the protocol,
-            the Wrangler is intended to perform a computationally intensive role, that of monitoring the Margin Accounts.
-            By monitoring and ‘Wrangling’ terminal accounts (at liquidation level), the Wrangler maintains the general health
-            of the ecosystem, while also protecting the interests of the Lenders. From the creation of a Margin Account,
-            to every state change in position, adding of collateral, right until the account is liquidated, the Wrangler
-            keeps tabs on each development. Whenever there is a change in state, the Wrangler notifies the Smart Contract
-            System, which then triggers an Oracle call and subsequently checks the margin level of the account. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>How does the Lendroid Auction occur? </div>
-        <div class="faq-a">
-          <p>
-            When a Wrangler identifies a terminal margin account, the claim is verified by the smart contract. If ratified, the Wrangler
-            is awarded a bounty (part of the loan offer object, deposited by the Lender) and the auction is triggered. The
-            Lendroid auction is not winner take all. The trader’s collateral and positions are taken over, but not by any
-            single Wrangler. Every Wrangler chooses to repay a small portion of total outstanding loan and his bid would
-            be proportionately considered. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>What are LSTs? What is their utility on Lendroid? </div>
-        <div class="faq-a">
-          <p>
-            The Lendroid Support Token, or LST, is the native token of the Lendroid protocol. Participation on the protocol requires
-            a user to possess LSTs. Those that do not are incentivized to earn LSTs by engaging in activities that contribute
-            to the health of the ecosystem. As with all ERC20 tokens, LSTs will be tradeable following the crowd sale.
-            <br> The LST enables utility and lubricates processes on the protocol. There are four players on the protocol, two
-            of which provide utility - the Relayers and the Wranglers, and two others who avail of these utilities and participate
-            to maximize profits - the Lenders and the Borrowers/Margin Traders. On Lendroid, the toll for service or utility
-            providers on the protocol is baked into the system. Even without possessing a single token of LST, a user might
-            participate on Lendroid. As a Wrangler, he can monitor Margin Accounts and choose to earn LSTs by identifying
-            those accounts at liquidation level. In other words, they can be part of the network even without LSTs, by pitching
-            in to provide vital services like monitoring loan lifecycles and margin accounts. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>Token launch details </div>
-        <div class="faq-a">
-          <p>
-            The total supply of tokens is 6,000,000,000 LST. The token launch will take place on Novermber 25th, 2017. ETH is the only
-            accepted currency during the launch. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>Where is Lendroid based? </div>
-        <div class="faq-a">
-          <p>
-            Lendroid was founded in Canada, and is currently based in Singapore.. </p>
-        </div>
-      </div>
-
-      <div class="faq-c">
-        <div class="faq-q">
-          <span class="faq-t">+</span>How do I join the community? </div>
-        <div class="faq-a">
-          <p>
-            Join us on
-            <a href="https://t.me/lendroidproject" target="_blank">Telegram</a> and
-            <a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">Riot</a>
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <br>
-    <br>
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-      $(".faq-q").click(function () {
-        var container = $(this).parents(".faq-c");
-        var answer = container.find(".faq-a");
-        var trigger = container.find(".faq-t");
-
-        answer.slideToggle(200);
-
-        if (trigger.hasClass("faq-o")) {
-          trigger.removeClass("faq-o");
-        }
-        else {
-          trigger.addClass("faq-o");
-        }
-      });
-    </script>
-
-
-
-    <div class="container">
-
+      <br>
+      <br>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-        <img src="/assets/images/logo.svg" width="165" height="65" class="img-responsive" style="text-align:center;margin:0 auto;">
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
-        <ul>
-          <li><a href="https://blog.lendroid.com" target="_blank"><li><img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive"></li>     </a></li>
-          <li><a href="https://twitter.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive"></li> </a> </li>
-          <li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive"></li> </a></li>
-          <li><a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank"><li><img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive"></li></a></li>
-        </ul>
+        <p>© 2017 Lendroid</p>
+        <p>Design by:
+          <a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
+        </p>
       </div>
     </div>
-    <div style="clear:both;"></div>
-    <br>
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 email">
-
-      <p>Email: connect@lendroid.com </p>
-
-    </div>
-    <br>
-    <br>
-
-
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo">
-      <p>© 2017 Lendroid</p>
-      <p>Design by:
-        <a href="http://fingerprintscreative.com/" target="_blank">Fingerprints</a>
-      </p>
-    </div>
-
-
-  </div>
-
-  </div>
-
-
-
-
-
-  <!-- Particle JS -->
-</body>
-
+  </body>
 </html>
