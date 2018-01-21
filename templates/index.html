@@ -13,8 +13,8 @@
 		<title>Lendroid | Decentralized Margin Trading</title>
 		<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
 		<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
-		<meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-		<meta name="author" content="Vincent Garreau" />
+		<meta name="description" content="A non-rent-seeking, open protocol for decentralized lending that enables margin trading and short selling of ERC-20 tokens.">
+		<meta name="author" content="Lendroid" />
 		<link rel="stylesheet" href="/assets/css/animations.css" type="text/css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" media="screen" href="/assets/css/style.css">
@@ -24,21 +24,14 @@
 		<link href="/assets/css/table.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/responsive.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+		<link href="https://cdn.rawgit.com/jackmoore/colorbox/master/example1/colorbox.css" rel="stylesheet">
 		<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="/assets/js/bootstrap.js"></script>
 		<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-		<!--Jquery Countdown-->
 		<link rel="stylesheet" href="/assets/css/styles.css" type="text/css" media="all" />
-		<script type="text/javascript" src="/assets/js/jquery.downCount.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				$('.countdown').downCount({
-					date: '12/06/2017 12:00:00',
-					offset: +1
-				});
-			});
-		</script>
+		<script src="/assets/js/jquery.sidebar.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js"></script>
 		<!--Email Form-->
 		<script language="Javascript" type="text/javascript">
 			/* wording of your error and thank you messages */
@@ -58,7 +51,7 @@
 					if (trim(value) == null || trim(value) == "") {/*alert(errorMessage);*/$Npro("Error").innerHTML = errorMessage; $Npro("Error").style.display = "inline"; return false; }
 					else { return true; }
 					}//with
-			}//emptyvalidation		
+			}//emptyvalidation
 			function signup(thisform) {
 				var $thisform = $(thisform),
 					$email = $thisform.find('input[name="EMAIL"]');
@@ -106,6 +99,26 @@
 					$(window).load(function () {
 						$('#preloader').fadeOut('slow', function () { $(this).remove(); });
 					});
+					$("#telegramPopupContent span.close").on("click", closePopup);
+					$("#telegramPopupContent").sidebar(
+						{speed: 500,side: "left",isClosed: true,close: true}
+					);
+					function openPopup(){
+						$("#telegramPopupContent").sidebar().trigger("sidebar:open");
+					}
+
+					function closePopup(){
+						$("#telegramPopupContent").sidebar().trigger("sidebar:close");
+					  Cookies.set('telegramPopupShown', 'yes', { expires: 1 });
+					}
+
+					setTimeout(function(){
+						// openPopup();
+						if(Cookies.get('telegramPopupShown')){
+					  } else {
+					    openPopup();
+					  }
+					}, 5000);
 				});
 		</script>
 		<!--PRELOADER-->
@@ -163,7 +176,7 @@
 							scrollTop: $(el).offset().top
 						}, speed);
 					}
-				});//]]> 
+				});//]]>
 		</script>
 		<script>
 				$(document).ready(function () {
@@ -192,6 +205,14 @@
 		<div id="preloader"></div>
 		<!-- particles.js container -->
 		<div class="main_container">
+			<div id="telegramPopupContent" class="sidebar left">
+				<span class="close">x</span>
+				<h2>Got queries?</h2>
+				<br />
+				<p>
+					Please feel free to join us on <a href="https://t.me/lendroidproject" target="_blank">Telegram</a>
+				</p>
+			</div>
 			<div id="particles-js" style="position:absolute;z-index:-1;top:0px;"></div>
 			<div class="container">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 logo">
@@ -250,61 +271,51 @@
 						<li>
 							<a href="/media-kit">Media Kit</a>
 						</li>
-						<a href="https://blog.lendroid.com" class="hidden-xs">
-							<li>
+						<li>
+							<a href="https://github.com/lendroidproject" target="_blank" class="hidden-xs">
+								<img src="/assets/images/01-08.svg" width="22" height="19" class="img-responsive">
+							</a>
+						</li>
+						<li>
+							<a href="https://blog.lendroid.com" class="hidden-xs">
 								<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
-							</li>
-						</a>
-						<a href="https://www.reddit.com/user/vigsun" target="_blank" class="hidden-xs">
-							<li>
-								<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
-							</li>
-						</a>
-						<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
-							<li>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
 								<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
-							</li>
-						</a>
-						<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
-							<li>
-								<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
-							</li>
-						</a>
-						<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank" class="hidden-xs">
-							<li>
-								<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
-							</li>
-						</a>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+								<img src="/assets/images/01-05-2.svg" width="22" height="19" class="img-responsive">
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="hidden-lg hidden-md col-sm-12 col-xs-8 connect_icons">
 				<ul>
-					<a href="#">
-						<li>
+					<li>
+						<a href="https://github.com/lendroidproject" target="_blank" class="hidden-xs">
+							<img src="/assets/images/01-08.svg" width="22" height="19" class="img-responsive">
+						</a>
+					</li>
+					<li>
+						<a href="https://blog.lendroid.com" class="hidden-xs">
 							<img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive">
-						</li>
-					</a>
-					<a href="https://www.reddit.com/user/vigsun" target="_blank">
-						<li>
-							<img src="/assets/images/01-02.svg" width="25" height="22" class="img-responsive">
-						</li>
-					</a>
-					<a href="https://twitter.com/lendroidproject" target="_blank">
-						<li>
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/lendroidproject" target="_blank" class="hidden-xs">
 							<img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive">
-						</li>
-					</a>
-					<a href="https://t.me/lendroidproject" target="_blank">
-						<li>
-							<img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive">
-						</li>
-					</a>
-					<a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank">
-						<li>
-							<img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive">
-						</li>
-					</a>
+						</a>
+					</li>
+					<li>
+						<a href="https://t.me/lendroidproject" target="_blank" class="hidden-xs">
+							<img src="/assets/images/01-05-2.svg" width="22" height="19" class="img-responsive">
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="container">
@@ -343,23 +354,26 @@
 		</div>
 		<div class="container">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 token_launch_heading">
-				<h3>Token Launch Registration in</h3>
+				<h3>Loans for ENS names Demo</h3>
 				<ul class="countdown">
 					<li>
-						<span class="days" style="color:#fff;">00</span>
-						<p class="days_ref">days</p>
+						<p class="hours_ref">
+							<a class="blue_button_light" href="https://lendroidproject.github.io/demo" target="_blank">Link to the Demo</a>
+						</p>
 					</li>
 					<li>
-						<span class="hours" style="background: #fff;">00</span>
-						<p class="hours_ref">hours</p>
+						<p class="days_ref">
+							<a class="blue_button_light" href="https://github.com/lendroidproject/lendroid-ens-loan" target="_blank">
+								<img src="/assets/images/01-08.svg" width="22" height="19" class="img-responsive">
+							</a>
+						</p>
 					</li>
 					<li>
-						<span class="minutes" style="background: #fff;">00</span>
-						<p class="minutes_ref">minutes</p>
-					</li>
-					<li>
-						<span class="seconds last" style="background: #fff;">00</span>
-						<p class="seconds_ref">seconds</p>
+						<p class="hours_ref">
+							<a class="blue_button_light blue_button_prominent" href="https://t.me/lendroidproject" target="_blank">
+								<img src="/assets/images/01-05-1.svg" width="22" height="19" class="img-responsive">
+							</a>
+						</p>
 					</li>
 				</ul>
 			</div>
@@ -380,7 +394,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid" style="background:#fff;">
+		<div class="container-fluid blog_bg">
 			<div class="container">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 offer_text_points">
 					<p class="square_box">01</p>
@@ -404,19 +418,41 @@
 		</div>
 		<br>
 		<br>
-		<div class="container-fluid blog_bg">
+		<div class="container-fluid" style="background:#fff;">
 			<div class="container">
 				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2 offer_text">
 					<h3>Our Allies</h3>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-					<img src="/assets/images/allies_01.png" class="img-responsive" alt="" />
+					<a href="https://0xproject.com" target="_blank">
+						<img src="/assets/images/allies_03.png" class="img-responsive" alt="0x Project" />
+					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-					<img src="/assets/images/allies_02.png" class="img-responsive" alt="" />
+					<a href="https://melonport.com" target="_blank">
+						<img src="/assets/images/allies_06.jpeg" class="img-responsive" alt="Melonport" />
+					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
-					<img src="/assets/images/allies_03.png" class="img-responsive" alt="" />
+					<a href="https://radarrelay.com" target="_blank">
+						<img src="/assets/images/allies_01.png" class="img-responsive" alt="Radar Relay" />
+					</a>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<a href="https://keep.network" target="_blank">
+						<img src="/assets/images/allies_04.png" class="img-responsive" alt="Keep Network" />
+					</a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<a href="http://amadeusrelay.org" target="_blank">
+						<img src="/assets/images/allies_05.png" class="img-responsive" alt="Amadeus Relay" />
+					</a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+					<a href="https://the0cean.com" target="_blank">
+						<img src="/assets/images/allies_02.png" class="img-responsive" alt="The 0cean" />
+					</a>
 				</div>
 			</div>
 		</div>
@@ -481,7 +517,7 @@
 							<div class="timeline-event animated fadeInLeftShort" data-id="2">
 								<div class="timeline-heading">
 									<h4>
-										<a href="/assets/images/The Lendroid Whitepaper.pdf" target="_blank">Whitepaper on Decentralized Digital Asset Lending released</a>
+										<a href="https://lendroid.com/assets/whitepaper.pdf" target="_blank">Whitepaper on Decentralized Digital Asset Lending released</a>
 									</h4>
 								</div>
 								<div class="timeline-footer">
@@ -640,28 +676,6 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
 				<ul>
 					<li>
-						<img src="/assets/images/vii.png" class="img-responsive">
-					</li>
-					<li class="team_text">Vii</li>
-					<li class="team_text">Developer</li>
-					<li>
-						<a href="https://twitter.com/viisundaram" target="_blank">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-						</a>
-						&nbsp;
-						<a href="https://www.linkedin.com/in/vigneshmsundaram" target="_blank">
-							<i class="fa fa-linkedin" aria-hidden="true"></i>
-						</a>
-						&nbsp;
-						<a href="https://www.reddit.com/user/allkalsus" target="_blank">
-							<i class="fa fa-reddit-alien" aria-hidden="true"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
-				<ul>
-					<li>
 						<img src="/assets/images/supriya.png" class="img-responsive">
 					</li>
 					<li class="team_text">Supriya Vasu</li>
@@ -677,7 +691,44 @@
 					</li>
 				</ul>
 			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/norio.png" class="img-responsive">
+					</li>
+					<li class="team_text">Norio J. Filiatrault</li>
+					<li class="team_text">Community Manager</li>
+					<li>
+						<a href="https://www.linkedin.com/in/nor-joseph-filiatrault-aono-146b86b2" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://twitter.com/njfili" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
 			<div style="clear:both;"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
+				<ul>
+					<li>
+						<img src="/assets/images/vivek.png" class="img-responsive">
+					</li>
+					<li class="team_text">Vivek</li>
+					<li class="team_text">Developer</li>
+					<li>
+						<a href="https://twitter.com/delliknoone" target="_blank">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.linkedin.com/in/vivek-meenakshi-sundaram-804863149/" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
 				<ul>
 					<li>
@@ -702,22 +753,25 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 team">
 				<ul>
 					<li>
-						<img src="/assets/images/vivek.png" class="img-responsive">
+						<img src="/assets/images/vii.png" class="img-responsive">
 					</li>
-					<li class="team_text">Vivek</li>
+					<li class="team_text">Vii</li>
 					<li class="team_text">Developer</li>
 					<li>
-						<a href="https://twitter.com/delliknoone" target="_blank">
+						<a href="https://twitter.com/viisundaram" target="_blank">
 							<i class="fa fa-twitter" aria-hidden="true"></i>
 						</a>
 						&nbsp;
-						<a href="https://www.linkedin.com/in/vivek-meenakshi-sundaram-804863149/" target="_blank">
+						<a href="https://www.linkedin.com/in/vigneshmsundaram" target="_blank">
 							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+						&nbsp;
+						<a href="https://www.reddit.com/user/allkalsus" target="_blank">
+							<i class="fa fa-reddit-alien" aria-hidden="true"></i>
 						</a>
 					</li>
 				</ul>
 			</div>
-			
 		</div>
 		<div class="container-fluid blog_bg">
 			<div class="container">
@@ -727,27 +781,85 @@
 				</div>
 				<div class="index-content">
 					<div class="container">
+
+						<a href="https://blog.lendroid.com/lendroid-amadeus-relay-7124b8309535" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_10.jpeg">
+									<h4>Lendroid + Amadeus Relay</h4>
+									<a href="https://blog.lendroid.com/lendroid-amadeus-relay-7124b8309535" target="_blank"
+									class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
+						<a href="https://blog.lendroid.com/token-summit-not-just-a-token-crypto-event-82b8abb10d1" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_09.jpeg">
+									<h4>Token Summit — Not Just a ‘token’ Crypto Event</h4>
+									<a href="https://blog.lendroid.com/token-summit-not-just-a-token-crypto-event-82b8abb10d1" target="_blank"
+									class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
+						<a href="https://blog.lendroid.com/testing-strengths-5f5c9351a650" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_08.jpeg">
+									<h4>Testing strengths!</h4>
+									<a href="https://blog.lendroid.com/testing-strengths-5f5c9351a650" target="_blank"
+									class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
+						<div style="clear:both;"></div>
+
+						<a href="https://blog.lendroid.com/lendroid-keep-smarter-smart-contracts-7a7fb76cd634" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_07.png">
+									<h4>Lendroid + Keep = Smarter Smart Contracts</h4>
+									<a href="https://blog.lendroid.com/lendroid-keep-smarter-smart-contracts-7a7fb76cd634" target="_blank" class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
+						<a href="https://blog.lendroid.com/smart-contracts-that-arent-just-smart-but-good-too-32a3f124f30d" target="_blank">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<div class="card">
+									<img src="/assets/images/blog_06.jpeg">
+									<h4>Smart Contracts that aren’t just smart, but good, too</h4>
+									<a href="https://blog.lendroid.com/smart-contracts-that-arent-just-smart-but-good-too-32a3f124f30d" target="_blank" class="">Read Article</a>
+								</div>
+							</div>
+						</a>
+
 						<a href="https://blog.lendroid.com/charting-the-future-of-fund-management-with-melonport-551847194db4" target="_blank">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<div class="card">
 									<img src="/assets/images/blog_05a.jpg">
 									<h4>Charting the Future of Fund Management with Melonport</h4>
-
 									<a href="https://blog.lendroid.com/charting-the-future-of-fund-management-with-melonport-551847194db4" target="_blank"
 									class="">Read Article</a>
 								</div>
 							</div>
 						</a>
+
+						<div style="clear:both;"></div>
+
 						<a href="https://blog.lendroid.com/dont-sell-your-digital-assets-instead-borrow-against-them-2181a3f48a17" target="_blank">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<div class="card">
 									<img src="/assets/images/blog_05.jpg">
 									<h4>Lendroid — Vision, Strategy and Progress</h4>
-
 									<a href="https://blog.lendroid.com/lendroid-vision-strategy-and-progress-5a7a4515cf41" target="_blank" class="">Read Article</a>
 								</div>
 							</div>
 						</a>
+
 						<a href="https://blog.lendroid.com/loans-for-ens-names-lendroid-testnet-demo-1b3d5f741358" target="_blank">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<div class="card">
@@ -757,8 +869,9 @@
 								</div>
 							</div>
 						</a>
+
 						<div style="clear:both;"></div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -771,10 +884,10 @@
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_logo connect_icons">
 				<ul>
+					<li><a href="https://github.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-08.svg" width="22" height="19" class="img-responsive"></li></a></li>
 					<li><a href="https://blog.lendroid.com" target="_blank"><li><img src="/assets/images/01-01.svg" width="25" height="22" class="img-responsive"></li>     </a></li>
 					<li><a href="https://twitter.com/lendroidproject" target="_blank"><li><img src="/assets/images/01-03.svg" width="25" height="22" class="img-responsive"></li> </a> </li>
-					<li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05.svg" width="22" height="19" class="img-responsive"></li> </a></li>
-					<li><a href="https://riot.im/app/#/room/#lendroid:matrix.org" target="_blank"><li><img src="/assets/images/01-07.svg" width="22" height="19" class="img-responsive"></li></a></li>
+					<li><a href="https://t.me/lendroidproject" target="_blank"><li><img src="/assets/images/01-05-2.svg" width="22" height="19" class="img-responsive"></li> </a></li>
 				</ul>
 			</div>
 			<div style="clear:both;"></div>

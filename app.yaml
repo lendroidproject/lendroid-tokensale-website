@@ -8,7 +8,7 @@ handlers:
   static_files: assets/logos/favicon.ico
   upload: assets/logos/favicon.ico
   secure: always
-  
+
 - url: /assets
   secure: always
   static_dir: assets

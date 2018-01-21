@@ -14,7 +14,7 @@ def landing():
 
 @app.route('/faq')
 def faq():
-    """ Render the 'Frequently Asked Questions' page that provides more details abou the protocol 
+    """ Render the 'Frequently Asked Questions' page that provides more details abou the protocol
         and the Token Sale.
     """
     return render_template('faq.html')
@@ -28,7 +28,6 @@ def lendroid_support_token():
 def media_kit():
     """ Render the Media kit page."""
     return render_template('media-kit.html')
-
 
 @app.errorhandler(404)
 def page_not_found(e):

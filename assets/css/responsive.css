@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-@media screen and (max-width: 1440px) { 
+@media screen and (max-width: 1440px) {
 
 
 }
@@ -12,7 +12,7 @@
 /*---------------------------------------------------------------------------------------------------------*/
 
 
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
 .menu {margin-top:44px;}
 .menu ul {margin:0px; padding:0px; list-style-type: none;}
 .menu ul li {float:left;margin-right: 11px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;}
@@ -64,7 +64,7 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-	
+
 	.btn-primary {
     /* background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%); */
     background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
@@ -86,8 +86,8 @@
 
 /*---------------------------------------------------------------------------------------------------------*/
 
-@media screen and (max-width: 768px) { 
-	
+@media screen and (max-width: 768px) {
+
 	.btn-primary {
     /* background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%); */
     background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
@@ -184,7 +184,7 @@
 .menu {margin-top: 24px;/* text-align: center; */margin-left: 6%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: -26%;}
 .menu ul li {float:left;margin-right:20px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
-	
+
 	.connect_icons {margin-top: 5px;text-align: center;margin-left: 23%;}
 .connect_icons ul {margin:0px;padding:0px;list-style-type: none;position: relative;left: 13%;}
 .connect_icons ul li {float:left;margin-right: 10px;color:#58595b;font-size:18px;text-transform: uppercase;letter-spacing: 1px;}
@@ -194,19 +194,19 @@
 @media screen and (max-width: 640px) {
 .form-control_custom {width: 100%;}
 .blue_button {background:#2e368f;padding: 5px 20px 5px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;margin-left: 0;width: 100%;}
-	
+
 	.menu {
     margin-top: 24px;
     /* text-align: center; */
     margin-left: 4%;
 }
-	
+
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
     margin-left: 28%;
 }
-	
+
 	.main_heading h2 {
     font-size: 35px;
     color: #2e368f;
@@ -214,7 +214,7 @@
     text-align: center;
     font-weight: 400;
 }
-	
+
 }
 
 @media screen and (max-width: 600px) {
@@ -223,13 +223,13 @@
     /* text-align: center; */
     margin-left: 4%;
 }
-	
+
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
     margin-left: 26%;
 }
-	
+
 	.main_heading h2 {
     font-size: 35px;
     color: #2e368f;
@@ -243,19 +243,19 @@
 @media screen and (max-width: 480px) {
 .form-control_custom {width: 100%;}
 .blue_button {background:#2e368f;padding: 5px 20px 5px 20px;color:#fff;text-transform: uppercase;border: none;font-size: 17px;letter-spacing: 1px;font-weight: 200;margin-left: 0;width: 100%;}
-	
+
 		.menu {
     margin-top: 24px;
     /* text-align: center; */
     margin-left: 12%;
 }
-	
+
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
     margin-left: 23%;
 }
-	
+
 	.main_heading h2 {
     font-size: 28px;
     color: #2e368f;
@@ -263,13 +263,16 @@
     text-align: center;
     font-weight: 400;
 }
-	
+
 }
 
 
 
-@media screen and (max-width: 425px) { 
-	
+@media screen and (max-width: 425px) {
+
+
+
+
 	.form-control {
     /* display: block; */
     width: 100%;
@@ -301,7 +304,10 @@
   text-align: center;
 }
 
-ul.countdown li { display: inline-block; }
+ul.countdown li {
+  display: block;
+  margin: 2em;
+}
 
 ul.countdown li span {
   font-size: 46px;
@@ -329,7 +335,7 @@ ul.countdown li p {
 .last {border-right: 1px solid #2a3b94;}
 
 
-	
+
 .menu {margin-top: 24px;/* text-align: center; */margin-left: -7%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 0%;}
 .menu ul li {float:left;margin-right:20px;color:#58595b;font-size: 16px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
@@ -339,7 +345,7 @@ ul.countdown li p {
 .logo {margin-top: 23px;/* margin: 0 auto; */text-align: center;}
 .row {
     margin-right: 15px;
-    margin-left:  15px;
+    margin-left: -12px;
 }
 .main_heading {margin-top: 50px;}
 .main_heading h2 {font-size: 44px;color:#2e368f;letter-spacing: 20;text-align: center;font-weight: 400;}
@@ -382,7 +388,7 @@ ul.countdown li p {
     border-bottom-left-radius: 0;
     margin-top: 10px;
 }
-	
+
 .btn-primary {
     /* background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%); */
     background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
@@ -393,14 +399,15 @@ ul.countdown li p {
     background-repeat: repeat-x;
     /* border-color: #245580; */
     width: 100%;
-}	
+}
 }
 
 
 /*---------------------------------------------------------------------------------------------------------*/
 
-@media screen and (max-width: 375px) { 
-	
+@media screen and (max-width: 375px) {
+
+
 	.scrollToTop {
     width: 60px;
     height: 80px;
@@ -416,7 +423,7 @@ ul.countdown li p {
     background: url(../images/scroll_to_top.png) no-repeat 0px 20px;
     bottom: 0;
 }
-	
+
 	.form-control {
     /* display: block; */
     width: 100%;
@@ -440,7 +447,7 @@ ul.countdown li p {
     margin: 20px auto;
     width: 100%;
 }
-	
+
 	input.btn.btn-lg, input.btn.btn-lg:focus {
     outline: none;
     width: 100%;
@@ -484,8 +491,8 @@ ul.countdown li p {
 
 .last {border-right: 1px solid #2a3b94;}
 
-	
-		
+
+
 .menu {margin-top: 24px;/* text-align: center; */margin-left: -3%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 0%;}
 .menu ul li {float:left;margin-right: 20px;color:#58595b;font-size: 15px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
@@ -531,7 +538,7 @@ ul.countdown li p {
 
 .blog_bg {background:url(../images/roadmap_bg.png) no-repeat;background-size:cover;width:100%;height: auto;}
 	.road_map{padding-left: 15px;}
-	
+
 	button.btn {
     width: 100%;
     height: 39px;
@@ -549,24 +556,25 @@ ul.countdown li p {
     background-repeat: repeat-x;
     /* border-color: #245580; */
     width: 100%;
-}	
+}
 
 }
 /*---------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width: 384px) { 
+@media screen and (max-width: 384px) {
+
 
 .menu {
     margin-top: 24px;
     /* text-align: center; */
     margin-left: -2%;
 }
-	
+
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
     margin-left: 6%;
 }
-	
+
 	.main_heading h2 {
     font-size: 35px;
     color: #2e368f;
@@ -580,20 +588,20 @@ ul.countdown li p {
 
 
 
-@media screen and (max-width: 360px) { 
+@media screen and (max-width: 360px) {
 
 .menu {
     margin-top: 24px;
     /* text-align: center; */
     margin-left: 0%;
 }
-	
+
 	.connect_icons {
     margin-top: 14px;
     text-align: center;
     margin-left: 4%;
 }
-	
+
 	.main_heading h2 {
     font-size: 35px;
     color: #2e368f;
@@ -604,6 +612,7 @@ ul.countdown li p {
 }
 
 @media screen and (max-width: 320px) {
+
 	.btn-primary {
     /* background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%); */
     background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
@@ -615,7 +624,7 @@ ul.countdown li p {
     /* border-color: #245580; */
     width: 100%;
 }
-	
+
 	.form-control {
     /* display: block; */
     width: 100%;
@@ -634,7 +643,7 @@ ul.countdown li p {
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     margin-bottom: 10px;
-    }	
+    }
 	input.btn.btn-lg, input.btn.btn-lg:focus {
     outline: none;
     width: 100%;
@@ -643,7 +652,7 @@ ul.countdown li p {
     border-bottom-right-radius: 0;
     text-align: left;
 }
-	
+
 	ul.countdown {
   list-style: none;
   margin: 5px 0;
@@ -679,7 +688,7 @@ ul.countdown li p {
 
 .last {border-right: 1px solid #2a3b94;}
 
-	
+
 	.menu {margin-top: 24px;/* text-align: center; */margin-left: -4%;}
 .menu ul {margin:0px;padding:0px;list-style-type: none;margin: 0 auto;position: relative;left: 6%;}
 .menu ul li {float:left;margin-right: 15px;color:#58595b;font-size: 15px;text-transform: uppercase;letter-spacing: 1px;text-align: center;}
@@ -732,6 +741,6 @@ ul.countdown li p {
     border-bottom-left-radius: 0;
     margin-top: 10px;
 }
-	
+
 
 }
